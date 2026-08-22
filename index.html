@@ -1,1065 +1,242 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Barbería & Peluquería | Reserva tu turno</title>
-
-  <meta name="description"
-        content="Reserva tu turno online. Cortes, barba y servicios profesionales.">
-
-  <!-- ICONOS -->
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-  <style>
-
-    /* =========================
-       CONFIGURACIÓN GENERAL
-    ========================= */
-
-    :root {
-      --gold: #d4af37;
-      --gold-light: #f0d77b;
-      --black: #080808;
-      --dark: #111111;
-      --card: #171717;
-      --border: #292929;
-      --text: #ffffff;
-      --muted: #a6a6a6;
-      --green: #25d366;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: "Segoe UI", Roboto, Arial, sans-serif;
-      background: var(--black);
-      color: var(--text);
-      line-height: 1.6;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .container {
-      width: min(1100px, 92%);
-      margin: auto;
-    }
-
-
-    /* =========================
-       NAVBAR
-    ========================= */
-
-    .navbar {
-      position: sticky;
-      top: 0;
-      z-index: 999;
-
-      background: rgba(8, 8, 8, 0.92);
-      backdrop-filter: blur(12px);
-
-      border-bottom: 1px solid rgba(212, 175, 55, 0.25);
-    }
-
-    .nav-content {
-      min-height: 70px;
-
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .logo {
-      font-size: 1.25rem;
-      font-weight: 800;
-      letter-spacing: 1px;
-    }
-
-    .logo span {
-      color: var(--gold);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 25px;
-      font-size: 0.9rem;
-      color: #ccc;
-    }
-
-    .nav-links a {
-      transition: 0.3s;
-    }
-
-    .nav-links a:hover {
-      color: var(--gold);
-    }
-
-
-    /* =========================
-       HERO
-    ========================= */
-
-    .hero {
-      min-height: 650px;
-
-      display: flex;
-      align-items: center;
-
-      text-align: center;
-
-      background:
-        linear-gradient(
-          rgba(0,0,0,.55),
-          rgba(8,8,8,.95)
-        ),
-        url("https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1400&q=85")
-        center/cover no-repeat;
-    }
-
-    .hero-content {
-      width: min(750px, 92%);
-      margin: auto;
-    }
-
-    .hero-icon {
-      width: 80px;
-      height: 80px;
-
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      margin: 0 auto 25px;
-
-      border: 1px solid var(--gold);
-      border-radius: 50%;
-
-      color: var(--gold);
-      font-size: 2rem;
-
-      box-shadow: 0 0 35px rgba(212,175,55,.18);
-    }
-
-    .hero h1 {
-      font-size: clamp(2.3rem, 7vw, 4.8rem);
-      line-height: 1.05;
-
-      text-transform: uppercase;
-      letter-spacing: 3px;
-
-      margin-bottom: 20px;
-    }
-
-    .hero h1 span {
-      color: var(--gold);
-    }
-
-    .hero p {
-      color: #d0d0d0;
-      max-width: 600px;
-      margin: auto;
-      font-size: 1.05rem;
-    }
-
-    .hero-buttons {
-      margin-top: 35px;
-
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-flex;
-
-      justify-content: center;
-      align-items: center;
-
-      gap: 10px;
-
-      padding: 15px 25px;
-
-      border-radius: 9px;
-
-      font-weight: 700;
-
-      transition: .3s;
-    }
-
-    .btn-gold {
-      background: linear-gradient(
-        135deg,
-        var(--gold),
-        #a77d08
-      );
-
-      color: #050505;
-
-      box-shadow: 0 8px 25px rgba(212,175,55,.2);
-    }
-
-    .btn-gold:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 30px rgba(212,175,55,.35);
-    }
-
-    .btn-outline {
-      border: 1px solid #555;
-      color: white;
-    }
-
-    .btn-outline:hover {
-      border-color: var(--gold);
-      color: var(--gold);
-    }
-
-
-    /* =========================
-       BENEFICIOS
-    ========================= */
-
-    .benefits {
-      margin-top: -45px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .benefit-grid {
-      display: grid;
-
-      grid-template-columns: repeat(3, 1fr);
-
-      gap: 15px;
-    }
-
-    .benefit {
-      background: var(--card);
-
-      border: 1px solid var(--border);
-
-      padding: 25px 15px;
-
-      text-align: center;
-
-      border-radius: 14px;
-    }
-
-    .benefit i {
-      color: var(--gold);
-      font-size: 1.7rem;
-      margin-bottom: 10px;
-    }
-
-    .benefit h3 {
-      font-size: .95rem;
-    }
-
-    .benefit p {
-      color: var(--muted);
-      font-size: .8rem;
-      margin-top: 5px;
-    }
-
-
-    /* =========================
-       SECCIONES
-    ========================= */
-
-    section {
-      padding: 85px 0;
-    }
-
-    .section-heading {
-      text-align: center;
-      margin-bottom: 45px;
-    }
-
-    .section-heading small {
-      color: var(--gold);
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      font-weight: bold;
-    }
-
-    .section-heading h2 {
-      font-size: clamp(2rem, 5vw, 3rem);
-      margin-top: 8px;
-    }
-
-    .section-heading p {
-      color: var(--muted);
-      max-width: 600px;
-      margin: 10px auto 0;
-    }
-
-
-    /* =========================
-       SERVICIOS
-    ========================= */
-
-    .services-grid {
-      display: grid;
-
-      grid-template-columns: repeat(2, 1fr);
-
-      gap: 18px;
-    }
-
-    .service {
-      background: var(--card);
-
-      border: 1px solid var(--border);
-
-      border-radius: 14px;
-
-      padding: 25px;
-
-      display: flex;
-
-      justify-content: space-between;
-
-      gap: 20px;
-
-      transition: .3s;
-    }
-
-    .service:hover {
-      transform: translateY(-4px);
-      border-color: rgba(212,175,55,.5);
-    }
-
-    .service-left {
-      display: flex;
-      gap: 15px;
-    }
-
-    .service-icon {
-      width: 45px;
-      height: 45px;
-
-      min-width: 45px;
-
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      background: rgba(212,175,55,.1);
-
-      border-radius: 10px;
-
-      color: var(--gold);
-    }
-
-    .service h3 {
-      font-size: 1rem;
-    }
-
-    .service p {
-      color: var(--muted);
-      font-size: .8rem;
-      margin-top: 4px;
-    }
-
-    .price {
-      color: var(--gold);
-      font-weight: 800;
-      white-space: nowrap;
-    }
-
-
-    /* =========================
-       RESERVAS
-    ========================= */
-
-    .booking-box {
-      background:
-        linear-gradient(
-          135deg,
-          #1a1a1a,
-          #101010
-        );
-
-      border: 1px solid rgba(212,175,55,.3);
-
-      border-radius: 20px;
-
-      padding: 45px 25px;
-
-      text-align: center;
-
-      box-shadow: 0 20px 60px rgba(0,0,0,.35);
-    }
-
-    .booking-icon {
-      color: var(--gold);
-      font-size: 3rem;
-      margin-bottom: 15px;
-    }
-
-    .booking-box h2 {
-      font-size: 2rem;
-      margin-bottom: 10px;
-    }
-
-    .booking-box p {
-      color: var(--muted);
-      max-width: 550px;
-      margin: 0 auto 25px;
-    }
-
-    .booking-btn {
-      display: inline-flex;
-
-      align-items: center;
-      justify-content: center;
-
-      gap: 10px;
-
-      background: var(--gold);
-
-      color: #000;
-
-      padding: 16px 30px;
-
-      border-radius: 10px;
-
-      font-weight: 800;
-
-      transition: .3s;
-    }
-
-    .booking-btn:hover {
-      transform: scale(1.03);
-    }
-
-
-    /* =========================
-       INFORMACIÓN
-    ========================= */
-
-    .info-grid {
-      display: grid;
-
-      grid-template-columns: repeat(3, 1fr);
-
-      gap: 18px;
-    }
-
-    .info-card {
-      background: var(--card);
-
-      border: 1px solid var(--border);
-
-      padding: 25px;
-
-      border-radius: 14px;
-
-      text-align: center;
-    }
-
-    .info-card i {
-      color: var(--gold);
-      font-size: 1.6rem;
-      margin-bottom: 12px;
-    }
-
-    .info-card h3 {
-      font-size: 1rem;
-      margin-bottom: 5px;
-    }
-
-    .info-card p {
-      color: var(--muted);
-      font-size: .85rem;
-    }
-
-
-    /* =========================
-       CTA FINAL
-    ========================= */
-
-    .final-cta {
-      background:
-        linear-gradient(
-          rgba(0,0,0,.65),
-          rgba(0,0,0,.9)
-        ),
-        url("https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=1400&q=85")
-        center/cover;
-    }
-
-    .cta-content {
-      text-align: center;
-      padding: 60px 20px;
-    }
-
-    .cta-content h2 {
-      font-size: clamp(2rem,5vw,3.2rem);
-      margin-bottom: 15px;
-    }
-
-    .cta-content p {
-      color: #ccc;
-      margin-bottom: 25px;
-    }
-
-
-    /* =========================
-       FOOTER
-    ========================= */
-
-    footer {
-      padding: 30px 20px;
-
-      text-align: center;
-
-      background: #050505;
-
-      border-top: 1px solid var(--border);
-
-      color: #777;
-
-      font-size: .8rem;
-    }
-
-    footer strong {
-      color: var(--gold);
-    }
-
-
-    /* =========================
-       WHATSAPP
-    ========================= */
-
-    .whatsapp {
-      position: fixed;
-
-      right: 20px;
-      bottom: 20px;
-
-      width: 58px;
-      height: 58px;
-
-      display: flex;
-
-      justify-content: center;
-      align-items: center;
-
-      background: var(--green);
-
-      color: white;
-
-      border-radius: 50%;
-
-      font-size: 1.8rem;
-
-      box-shadow: 0 5px 20px rgba(0,0,0,.45);
-
-      z-index: 1000;
-
-      transition: .3s;
-    }
-
-    .whatsapp:hover {
-      transform: scale(1.1);
-    }
-
-
-    /* =========================
-       RESPONSIVE
-    ========================= */
-
-    @media(max-width: 750px) {
-
-      .nav-links {
-        display: none;
-      }
-
-      .hero {
-        min-height: 600px;
-      }
-
-      .benefit-grid,
-      .services-grid,
-      .info-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .benefits {
-        margin-top: 20px;
-      }
-
-      section {
-        padding: 65px 0;
-      }
-
-      .service {
-        padding: 20px;
-      }
-
-    }
-
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabor Único | Menú Digital</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        /* Encabezado / Banner */
+        header {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1000&auto=format&fit=crop') center/cover;
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #ffbe0b;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        .btn-whatsapp {
+            display: inline-block;
+            background-color: #25d366;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        /* Menú */
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        h2.section-title {
+            text-align: center;
+            color: #d90429;
+            margin-bottom: 25px;
+            font-size: 1.8rem;
+            border-bottom: 2px solid #d90429;
+            display: inline-block;
+            width: 100%;
+            padding-bottom: 5px;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex-grow: 1;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #222;
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            color: #666;
+            margin: 8px 0;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .price {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #d90429;
+        }
+
+        .btn-pedir {
+            background-color: #ff9f1c;
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+
+        /* Información y Ubicación */
+        .info-section {
+            background-color: #fff;
+            padding: 30px 20px;
+            text-align: center;
+            margin-top: 40px;
+            border-top: 1px solid #ddd;
+        }
+
+        .info-section h3 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .info-section p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        .btn-maps {
+            display: inline-block;
+            background-color: #0284c7;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #111;
+            color: #888;
+            font-size: 0.8rem;
+        }
+    </style>
 </head>
-
-
 <body>
 
-
-<!-- =========================
-     NAVBAR
-========================= -->
-
-<header class="navbar">
-
-  <div class="container nav-content">
-
-    <div class="logo">
-      BARBERÍA <span>PRO</span>
-    </div>
-
-    <nav class="nav-links">
-
-      <a href="#servicios">Servicios</a>
-
-      <a href="#reservas">Reservas</a>
-
-      <a href="#ubicacion">Ubicación</a>
-
-    </nav>
-
-  </div>
-
-</header>
-
-
-
-<!-- =========================
-     HERO
-========================= -->
-
-<section class="hero">
-
-  <div class="hero-content">
-
-    <div class="hero-icon">
-      <i class="fa-solid fa-scissors"></i>
-    </div>
-
-    <h1>
-      Tu estilo.<br>
-      <span>Tu mejor versión.</span>
-    </h1>
-
-    <p>
-      Cortes modernos, barba y cuidado masculino
-      realizados por profesionales.
-    </p>
-
-    <div class="hero-buttons">
-
-      <a href="#reservas" class="btn btn-gold">
-        <i class="fa-regular fa-calendar-check"></i>
-        Reservar turno
-      </a>
-
-      <a href="#servicios" class="btn btn-outline">
-        Ver servicios
-      </a>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<!-- =========================
-     BENEFICIOS
-========================= -->
-
-<div class="benefits">
-
-  <div class="container benefit-grid">
-
-    <div class="benefit">
-
-      <i class="fa-solid fa-scissors"></i>
-
-      <h3>Profesionales</h3>
-
-      <p>Experiencia y atención personalizada.</p>
-
-    </div>
-
-
-    <div class="benefit">
-
-      <i class="fa-regular fa-clock"></i>
-
-      <h3>Reserva online</h3>
-
-      <p>Elige el día y horario que prefieras.</p>
-
-    </div>
-
-
-    <div class="benefit">
-
-      <i class="fa-solid fa-star"></i>
-
-      <h3>Calidad</h3>
-
-      <p>Un resultado pensado para ti.</p>
-
-    </div>
-
-  </div>
-
-</div>
-
-
-
-<!-- =========================
-     SERVICIOS
-========================= -->
-
-<section id="servicios">
-
-  <div class="container">
-
-    <div class="section-heading">
-
-      <small>Nuestros servicios</small>
-
-      <h2>Elige tu estilo</h2>
-
-      <p>
-        Servicios profesionales para que salgas
-        con una imagen impecable.
-      </p>
-
-    </div>
-
-
-    <div class="services-grid">
-
-
-      <div class="service">
-
-        <div class="service-left">
-
-          <div class="service-icon">
-            <i class="fa-solid fa-scissors"></i>
-          </div>
-
-          <div>
-
-            <h3>Corte clásico / Degradado</h3>
-
-            <p>
-              Corte, lavado y peinado.
-            </p>
-
-          </div>
+    <!-- Banner Principal -->
+    <header>
+        <h1>Sabor Único 🍔</h1>
+        <p>Las mejores hamburguesas y platos preparados al instante</p>
+        <a href="https://wa.me/591XXXXXXXX?text=Hola,%20quisiera%20hacer%20un%20pedido" class="btn-whatsapp" target="_blank">💬 Pedir por WhatsApp</a>
+    </header>
+
+    <!-- Menú Digital -->
+    <div class="container">
+        <h2 class="section-title">NUESTRO MENÚ</h2>
+        
+        <div class="menu-grid">
+            
+            <!-- Plato 1 -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=500&auto=format&fit=crop" alt="Hamburguesa Especial">
+                <div class="card-body">
+                    <div class="card-title">Hamburguesa Clásica</div>
+                    <div class="card-desc">Carne de res 150g, queso cheddar, lechuga, tomate y salsa de la casa.</div>
+                    <div class="card-footer">
+                        <span class="price">Bs 25</span>
+                        <a href="https://wa.me/591XXXXXXXX?text=Hola,%20quiero%20pedir%20una%20Hamburguesa%20Clásica" class="btn-pedir" target="_blank">Pedir</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Plato 2 -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=500&auto=format&fit=crop" alt="Pizza">
+                <div class="card-body">
+                    <div class="card-title">Pizza Pepperoni</div>
+                    <div class="card-desc">Masa artesanal, salsa de tomate natural, abundante queso mozzarella y pepperoni.</div>
+                    <div class="card-footer">
+                        <span class="price">Bs 50</span>
+                        <a href="https://wa.me/591XXXXXXXX?text=Hola,%20quiero%20pedir%20una%20Pizza%20Pepperoni" class="btn-pedir" target="_blank">Pedir</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Plato 3 -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1562967914-608f82629710?q=80&w=500&auto=format&fit=crop" alt="Pollo Frito">
+                <div class="card-body">
+                    <div class="card-title">Combo Broaster</div>
+                    <div class="card-desc">3 piezas de pollo crujiente acompañadas de papas fritas y ensalada.</div>
+                    <div class="card-footer">
+                        <span class="price">Bs 30</span>
+                        <a href="https://wa.me/591XXXXXXXX?text=Hola,%20quiero%20pedir%20un%20Combo%20Broaster" class="btn-pedir" target="_blank">Pedir</a>
+                    </div>
+                </div>
+            </div>
 
         </div>
-
-        <div class="price">
-          Bs 70
-        </div>
-
-      </div>
-
-
-
-      <div class="service">
-
-        <div class="service-left">
-
-          <div class="service-icon">
-            <i class="fa-solid fa-user"></i>
-          </div>
-
-          <div>
-
-            <h3>Perfilado de barba</h3>
-
-            <p>
-              Arreglo y definición de barba.
-            </p>
-
-          </div>
-
-        </div>
-
-        <div class="price">
-          Bs 40
-        </div>
-
-      </div>
-
-
-
-      <div class="service">
-
-        <div class="service-left">
-
-          <div class="service-icon">
-            <i class="fa-solid fa-crown"></i>
-          </div>
-
-          <div>
-
-            <h3>Combo VIP</h3>
-
-            <p>
-              Corte + arreglo de barba.
-            </p>
-
-          </div>
-
-        </div>
-
-        <div class="price">
-          Bs 100
-        </div>
-
-      </div>
-
-
-
-      <div class="service">
-
-        <div class="service-left">
-
-          <div class="service-icon">
-            <i class="fa-solid fa-child"></i>
-          </div>
-
-          <div>
-
-            <h3>Corte infantil</h3>
-
-            <p>
-              Corte para los más pequeños.
-            </p>
-
-          </div>
-
-        </div>
-
-        <div class="price">
-          Bs 50
-        </div>
-
-      </div>
-
-
     </div>
 
-  </div>
-
-</section>
-
-
-
-<!-- =========================
-     RESERVAS
-========================= -->
-
-<section id="reservas">
-
-  <div class="container">
-
-    <div class="booking-box">
-
-      <div class="booking-icon">
-
-        <i class="fa-regular fa-calendar-check"></i>
-
-      </div>
-
-      <h2>Reserva tu turno</h2>
-
-      <p>
-        Selecciona el día y horario que más te convenga.
-        Tu reserva se realizará mediante nuestro sistema online.
-      </p>
-
-      <a
-        href="https://calendly.com/jhairtupa34/30min"
-        target="_blank"
-        class="booking-btn">
-
-        <i class="fa-solid fa-calendar-days"></i>
-
-        Reservar ahora
-
-      </a>
-
+    <!-- Sección de Ubicación y Horarios -->
+    <div class="info-section">
+        <h3>📍 Visítanos o Pide Delivery</h3>
+        <p><strong>Horarios:</strong> Lunes a Domingo de 18:00 a 23:00</p>
+        <p><strong>Dirección:</strong> Av. Principal #123 (Frente a la plaza)</p>
+        <a href="https://maps.google.com" class="btn-maps" target="_blank">🗺️ Ver en Google Maps</a>
     </div>
 
-  </div>
-
-</section>
-
-
-
-<!-- =========================
-     INFORMACIÓN
-========================= -->
-
-<section id="ubicacion">
-
-  <div class="container">
-
-    <div class="section-heading">
-
-      <small>Información</small>
-
-      <h2>Visítanos</h2>
-
-    </div>
-
-
-    <div class="info-grid">
-
-
-      <div class="info-card">
-
-        <i class="fa-solid fa-location-dot"></i>
-
-        <h3>Ubicación</h3>
-
-        <p>
-          Avenida Tomás Barrón<br>
-          entre Calle 11
-        </p>
-
-      </div>
-
-
-
-      <div class="info-card">
-
-        <i class="fa-regular fa-clock"></i>
-
-        <h3>Horario</h3>
-
-        <p>
-          Lunes a sábado<br>
-          08:15 – 22:00
-        </p>
-
-      </div>
-
-
-
-      <div class="info-card">
-
-        <i class="fa-brands fa-whatsapp"></i>
-
-        <h3>Contacto</h3>
-
-        <p>
-          Escríbenos por WhatsApp
-          para cualquier consulta.
-        </p>
-
-      </div>
-
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<!-- =========================
-     CTA FINAL
-========================= -->
-
-<section class="final-cta">
-
-  <div class="container cta-content">
-
-    <h2>
-      ¿Listo para tu próximo corte?
-    </h2>
-
-    <p>
-      Reserva tu turno y deja tu estilo en manos profesionales.
-    </p>
-
-    <a
-      href="https://calendly.com/jhairtupa34/30min"
-      target="_blank"
-      class="btn btn-gold">
-
-      <i class="fa-solid fa-calendar-check"></i>
-
-      Reservar mi turno
-
-    </a>
-
-  </div>
-
-</section>
-
-
-
-<!-- =========================
-     FOOTER
-========================= -->
-
-<footer>
-
-  <p>
-    © 2026 <strong>Barbería Pro</strong>.
-    Todos los derechos reservados.
-  </p>
-
-  <p>
-    Página web creada como proyecto.
-  </p>
-
-</footer>
-
-
-
-<!-- =========================
-     WHATSAPP
-========================= -->
-
-<a
-  href="https://wa.me/?text=Hola,%20quisiera%20consultar%20sobre%20un%20turno"
-  target="_blank"
-  class="whatsapp"
-  aria-label="WhatsApp">
-
-  <i class="fa-brands fa-whatsapp"></i>
-
-</a>
-
+    <!-- Pie de página -->
+    <footer>
+        <p>© 2026 Sabor Único - Desarrollado por Jhair Tupa Web Design</p>
+    </footer>
 
 </body>
 </html>
+
