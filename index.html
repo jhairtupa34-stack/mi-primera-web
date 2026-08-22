@@ -3,65 +3,105 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mi primera página</title>
+  <title>Barbería & Peluquería</title>
   <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f0f4f8;
-      color: #333333;
+      background-color: #121212;
+      color: #ffffff;
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
-      margin: 0;
       padding: 20px;
     }
-    .card {
-      background: white;
-      padding: 30px;
+    .container {
+      background-color: #1e1e1e;
       border-radius: 16px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-      text-align: center;
-      max-width: 400px;
+      padding: 25px;
+      max-width: 420px;
       width: 100%;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      text-align: center;
     }
     h1 {
-      color: #2b6cb0;
-      margin-bottom: 10px;
+      color: #d4af37; /* Color dorado */
+      font-size: 1.8rem;
+      margin-bottom: 5px;
     }
-    h2 {
-      color: #4a5568;
-      font-size: 1.1rem;
-      font-weight: normal;
+    p.subtitle {
+      color: #aaa;
+      font-size: 0.9rem;
+      margin-bottom: 25px;
     }
-    p {
-      color: #718096;
-      line-height: 1.5;
+    .services {
+      text-align: left;
+      margin-bottom: 25px;
     }
-    .btn {
-      background-color: #3182ce;
-      color: white;
-      border: none;
-      padding: 12px 24px;
-      font-size: 1rem;
-      border-radius: 8px;
-      cursor: pointer;
+    .service-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 0;
+      border-bottom: 1px solid #333;
+    }
+    .service-name {
+      font-weight: 500;
+    }
+    .service-price {
+      color: #d4af37;
       font-weight: bold;
-      margin-top: 15px;
-      transition: background 0.3s;
     }
-    .btn:hover {
-      background-color: #2b6cb0;
+    .btn-reserve {
+      display: block;
+      width: 100%;
+      background-color: #d4af37;
+      color: #121212;
+      text-decoration: none;
+      padding: 14px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      border-radius: 8px;
+      transition: background-color 0.3s;
+    }
+    .btn-reserve:hover {
+      background-color: #f1c40f;
     }
   </style>
 </head>
 <body>
 
-  <div class="card">
-    <h1>¡Hola! 👋</h1>
-    <h2>Esta es mi primera página web</h2>
-    <p>Estoy aprendiendo a crear páginas web y a personalizarlas con estilo.</p>
-    <button class="btn">Contáctame</button>
+  <div class="container">
+    <h1>💈 Barbería & Peluquería</h1>
+    <p class="subtitle">Selecciona tu servicio y reserva tu horario en línea.</p>
+
+    <div class="services">
+      <div class="service-item">
+        <span class="service-name">Corte de Cabello</span>
+        <span class="service-price">$10</span>
+      </div>
+      <div class="service-item">
+        <span class="service-name">Arreglo de Barba</span>
+        <span class="service-price">$6</span>
+      </div>
+      <div class="service-item">
+        <span class="service-name">Combo Corte + Barba</span>
+        <span class="service-price">$14</span>
+      </div>
+      <div class="service-item">
+        <span class="service-name">Corte Infantil</span>
+        <span class="service-price">$8</span>
+      </div>
+    </div>
+
+    <!-- Enlace a tu agenda de Calendly -->
+    <a href="https://calendly.com/jhairtupa34/30min" target="_blank" class="btn-reserve">
+      📅 Reservar Cita
+    </a>
   </div>
 
 </body>
