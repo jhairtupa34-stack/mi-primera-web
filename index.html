@@ -3,251 +3,1063 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Barbería & Peluquería Professional</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <title>Barbería & Peluquería | Reserva tu turno</title>
+
+  <meta name="description"
+        content="Reserva tu turno online. Cortes, barba y servicios profesionales.">
+
+  <!-- ICONOS -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
   <style>
+
+    /* =========================
+       CONFIGURACIÓN GENERAL
+    ========================= */
+
+    :root {
+      --gold: #d4af37;
+      --gold-light: #f0d77b;
+      --black: #080808;
+      --dark: #111111;
+      --card: #171717;
+      --border: #292929;
+      --text: #ffffff;
+      --muted: #a6a6a6;
+      --green: #25d366;
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-      background-color: #0d0d0d;
-      color: #e0e0e0;
-      padding-bottom: 40px;
+      font-family: "Segoe UI", Roboto, Arial, sans-serif;
+      background: var(--black);
+      color: var(--text);
+      line-height: 1.6;
     }
 
-    /* Hero Header */
-    .hero {
-      background: linear-gradient(rgba(0,0,0,0.75), rgba(13,13,13,1)), 
-                  url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=800&q=80') center/cover no-repeat;
-      padding: 50px 20px 30px;
-      text-align: center;
-      border-bottom: 2px solid #d4af37;
-    }
-    .hero-icon {
-      font-size: 3rem;
-      color: #d4af37;
-      margin-bottom: 10px;
-    }
-    .hero h1 {
-      font-size: 2.2rem;
-      color: #ffffff;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      margin-bottom: 8px;
-    }
-    .hero p {
-      color: #b3b3b3;
-      font-size: 0.95rem;
+    a {
+      text-decoration: none;
+      color: inherit;
     }
 
-    /* Main Container */
-    .main-container {
-      max-width: 500px;
-      margin: 0 auto;
-      padding: 20px;
+    .container {
+      width: min(1100px, 92%);
+      margin: auto;
     }
 
-    /* Card Box */
-    .card {
-      background: #181818;
-      border-radius: 12px;
-      padding: 20px;
-      margin-bottom: 20px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-      border: 1px solid #282828;
+
+    /* =========================
+       NAVBAR
+    ========================= */
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+
+      background: rgba(8, 8, 8, 0.92);
+      backdrop-filter: blur(12px);
+
+      border-bottom: 1px solid rgba(212, 175, 55, 0.25);
     }
 
-    .section-title {
-      color: #d4af37;
-      font-size: 1.2rem;
-      margin-bottom: 15px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      border-bottom: 1px solid #2a2a2a;
-      padding-bottom: 8px;
-    }
+    .nav-content {
+      min-height: 70px;
 
-    /* Services List */
-    .service-item {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 12px 0;
-      border-bottom: 1px solid #262626;
+      gap: 20px;
     }
-    .service-item:last-child {
-      border-bottom: none;
+
+    .logo {
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: 1px;
     }
-    .service-info {
+
+    .logo span {
+      color: var(--gold);
+    }
+
+    .nav-links {
       display: flex;
-      flex-direction: column;
+      gap: 25px;
+      font-size: 0.9rem;
+      color: #ccc;
     }
-    .service-name {
-      font-weight: 600;
-      color: #ffffff;
+
+    .nav-links a {
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      min-height: 650px;
+
+      display: flex;
+      align-items: center;
+
+      text-align: center;
+
+      background:
+        linear-gradient(
+          rgba(0,0,0,.55),
+          rgba(8,8,8,.95)
+        ),
+        url("https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1400&q=85")
+        center/cover no-repeat;
+    }
+
+    .hero-content {
+      width: min(750px, 92%);
+      margin: auto;
+    }
+
+    .hero-icon {
+      width: 80px;
+      height: 80px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      margin: 0 auto 25px;
+
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+
+      color: var(--gold);
+      font-size: 2rem;
+
+      box-shadow: 0 0 35px rgba(212,175,55,.18);
+    }
+
+    .hero h1 {
+      font-size: clamp(2.3rem, 7vw, 4.8rem);
+      line-height: 1.05;
+
+      text-transform: uppercase;
+      letter-spacing: 3px;
+
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: var(--gold);
+    }
+
+    .hero p {
+      color: #d0d0d0;
+      max-width: 600px;
+      margin: auto;
+      font-size: 1.05rem;
+    }
+
+    .hero-buttons {
+      margin-top: 35px;
+
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+
+      justify-content: center;
+      align-items: center;
+
+      gap: 10px;
+
+      padding: 15px 25px;
+
+      border-radius: 9px;
+
+      font-weight: 700;
+
+      transition: .3s;
+    }
+
+    .btn-gold {
+      background: linear-gradient(
+        135deg,
+        var(--gold),
+        #a77d08
+      );
+
+      color: #050505;
+
+      box-shadow: 0 8px 25px rgba(212,175,55,.2);
+    }
+
+    .btn-gold:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(212,175,55,.35);
+    }
+
+    .btn-outline {
+      border: 1px solid #555;
+      color: white;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+
+    /* =========================
+       BENEFICIOS
+    ========================= */
+
+    .benefits {
+      margin-top: -45px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .benefit-grid {
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 15px;
+    }
+
+    .benefit {
+      background: var(--card);
+
+      border: 1px solid var(--border);
+
+      padding: 25px 15px;
+
+      text-align: center;
+
+      border-radius: 14px;
+    }
+
+    .benefit i {
+      color: var(--gold);
+      font-size: 1.7rem;
+      margin-bottom: 10px;
+    }
+
+    .benefit h3 {
+      font-size: .95rem;
+    }
+
+    .benefit p {
+      color: var(--muted);
+      font-size: .8rem;
+      margin-top: 5px;
+    }
+
+
+    /* =========================
+       SECCIONES
+    ========================= */
+
+    section {
+      padding: 85px 0;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-heading small {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-weight: bold;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      margin-top: 8px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      max-width: 600px;
+      margin: 10px auto 0;
+    }
+
+
+    /* =========================
+       SERVICIOS
+    ========================= */
+
+    .services-grid {
+      display: grid;
+
+      grid-template-columns: repeat(2, 1fr);
+
+      gap: 18px;
+    }
+
+    .service {
+      background: var(--card);
+
+      border: 1px solid var(--border);
+
+      border-radius: 14px;
+
+      padding: 25px;
+
+      display: flex;
+
+      justify-content: space-between;
+
+      gap: 20px;
+
+      transition: .3s;
+    }
+
+    .service:hover {
+      transform: translateY(-4px);
+      border-color: rgba(212,175,55,.5);
+    }
+
+    .service-left {
+      display: flex;
+      gap: 15px;
+    }
+
+    .service-icon {
+      width: 45px;
+      height: 45px;
+
+      min-width: 45px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      background: rgba(212,175,55,.1);
+
+      border-radius: 10px;
+
+      color: var(--gold);
+    }
+
+    .service h3 {
       font-size: 1rem;
     }
-    .service-desc {
-      font-size: 0.8rem;
-      color: #888;
-    }
-    .service-price {
-      color: #d4af37;
-      font-weight: bold;
-      font-size: 1.1rem;
+
+    .service p {
+      color: var(--muted);
+      font-size: .8rem;
+      margin-top: 4px;
     }
 
-    /* Reserve CTA Button */
-    .btn-reserve {
-      display: flex;
-      justify-content: center;
+    .price {
+      color: var(--gold);
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+
+    /* =========================
+       RESERVAS
+    ========================= */
+
+    .booking-box {
+      background:
+        linear-gradient(
+          135deg,
+          #1a1a1a,
+          #101010
+        );
+
+      border: 1px solid rgba(212,175,55,.3);
+
+      border-radius: 20px;
+
+      padding: 45px 25px;
+
+      text-align: center;
+
+      box-shadow: 0 20px 60px rgba(0,0,0,.35);
+    }
+
+    .booking-icon {
+      color: var(--gold);
+      font-size: 3rem;
+      margin-bottom: 15px;
+    }
+
+    .booking-box h2 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .booking-box p {
+      color: var(--muted);
+      max-width: 550px;
+      margin: 0 auto 25px;
+    }
+
+    .booking-btn {
+      display: inline-flex;
+
       align-items: center;
+      justify-content: center;
+
       gap: 10px;
-      width: 100%;
-      background: linear-gradient(135deg, #d4af37, #aa820a);
+
+      background: var(--gold);
+
       color: #000;
-      text-decoration: none;
-      padding: 16px;
-      font-size: 1.1rem;
-      font-weight: bold;
+
+      padding: 16px 30px;
+
       border-radius: 10px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
-      transition: all 0.3s ease;
-      margin-top: 10px;
-    }
-    .btn-reserve:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 18px rgba(212, 175, 55, 0.5);
+
+      font-weight: 800;
+
+      transition: .3s;
     }
 
-    /* Info Details */
-    .info-item {
-      display: flex;
-      align-items: center;
-      gap: 12px;
+    .booking-btn:hover {
+      transform: scale(1.03);
+    }
+
+
+    /* =========================
+       INFORMACIÓN
+    ========================= */
+
+    .info-grid {
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 18px;
+    }
+
+    .info-card {
+      background: var(--card);
+
+      border: 1px solid var(--border);
+
+      padding: 25px;
+
+      border-radius: 14px;
+
+      text-align: center;
+    }
+
+    .info-card i {
+      color: var(--gold);
+      font-size: 1.6rem;
       margin-bottom: 12px;
-      color: #ccc;
-      font-size: 0.9rem;
-    }
-    .info-item i {
-      color: #d4af37;
-      width: 20px;
     }
 
-    /* Floating WhatsApp Button */
-    .whatsapp-btn {
+    .info-card h3 {
+      font-size: 1rem;
+      margin-bottom: 5px;
+    }
+
+    .info-card p {
+      color: var(--muted);
+      font-size: .85rem;
+    }
+
+
+    /* =========================
+       CTA FINAL
+    ========================= */
+
+    .final-cta {
+      background:
+        linear-gradient(
+          rgba(0,0,0,.65),
+          rgba(0,0,0,.9)
+        ),
+        url("https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=1400&q=85")
+        center/cover;
+    }
+
+    .cta-content {
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .cta-content h2 {
+      font-size: clamp(2rem,5vw,3.2rem);
+      margin-bottom: 15px;
+    }
+
+    .cta-content p {
+      color: #ccc;
+      margin-bottom: 25px;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      padding: 30px 20px;
+
+      text-align: center;
+
+      background: #050505;
+
+      border-top: 1px solid var(--border);
+
+      color: #777;
+
+      font-size: .8rem;
+    }
+
+    footer strong {
+      color: var(--gold);
+    }
+
+
+    /* =========================
+       WHATSAPP
+    ========================= */
+
+    .whatsapp {
       position: fixed;
-      bottom: 20px;
+
       right: 20px;
-      background-color: #25d366;
-      color: white;
-      width: 55px;
-      height: 55px;
-      border-radius: 50%;
+      bottom: 20px;
+
+      width: 58px;
+      height: 58px;
+
       display: flex;
+
       justify-content: center;
       align-items: center;
-      font-size: 30px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-      text-decoration: none;
+
+      background: var(--green);
+
+      color: white;
+
+      border-radius: 50%;
+
+      font-size: 1.8rem;
+
+      box-shadow: 0 5px 20px rgba(0,0,0,.45);
+
       z-index: 1000;
+
+      transition: .3s;
     }
+
+    .whatsapp:hover {
+      transform: scale(1.1);
+    }
+
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media(max-width: 750px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        min-height: 600px;
+      }
+
+      .benefit-grid,
+      .services-grid,
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .benefits {
+        margin-top: 20px;
+      }
+
+      section {
+        padding: 65px 0;
+      }
+
+      .service {
+        padding: 20px;
+      }
+
+    }
+
   </style>
 </head>
+
+
 <body>
 
-  <!-- Encabezado / Banner -->
-  <div class="hero">
-    <div class="hero-icon"><i class="fa-solid fa-scissors"></i></div>
-    <h1>Barbería & Peluquería</h1>
-    <p>Estilo, corte y arreglo profesional. Tu mejor imagen en buenas manos.</p>
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<header class="navbar">
+
+  <div class="container nav-content">
+
+    <div class="logo">
+      BARBERÍA <span>PRO</span>
+    </div>
+
+    <nav class="nav-links">
+
+      <a href="#servicios">Servicios</a>
+
+      <a href="#reservas">Reservas</a>
+
+      <a href="#ubicacion">Ubicación</a>
+
+    </nav>
+
   </div>
 
-  <div class="main-container">
+</header>
 
-    <!-- Tarjeta de Reservas -->
-    <div class="card">
-      <div class="section-title">
-        <i class="fa-regular fa-calendar-check"></i> Agendar Cita
-      </div>
-      <p style="font-size: 0.85rem; color: #aaa; margin-bottom: 15px;">
-        Selecciona tu fecha y hora preferida. Los horarios ocupados se bloquean automáticamente.
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+  <div class="hero-content">
+
+    <div class="hero-icon">
+      <i class="fa-solid fa-scissors"></i>
+    </div>
+
+    <h1>
+      Tu estilo.<br>
+      <span>Tu mejor versión.</span>
+    </h1>
+
+    <p>
+      Cortes modernos, barba y cuidado masculino
+      realizados por profesionales.
+    </p>
+
+    <div class="hero-buttons">
+
+      <a href="#reservas" class="btn btn-gold">
+        <i class="fa-regular fa-calendar-check"></i>
+        Reservar turno
+      </a>
+
+      <a href="#servicios" class="btn btn-outline">
+        Ver servicios
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     BENEFICIOS
+========================= -->
+
+<div class="benefits">
+
+  <div class="container benefit-grid">
+
+    <div class="benefit">
+
+      <i class="fa-solid fa-scissors"></i>
+
+      <h3>Profesionales</h3>
+
+      <p>Experiencia y atención personalizada.</p>
+
+    </div>
+
+
+    <div class="benefit">
+
+      <i class="fa-regular fa-clock"></i>
+
+      <h3>Reserva online</h3>
+
+      <p>Elige el día y horario que prefieras.</p>
+
+    </div>
+
+
+    <div class="benefit">
+
+      <i class="fa-solid fa-star"></i>
+
+      <h3>Calidad</h3>
+
+      <p>Un resultado pensado para ti.</p>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<!-- =========================
+     SERVICIOS
+========================= -->
+
+<section id="servicios">
+
+  <div class="container">
+
+    <div class="section-heading">
+
+      <small>Nuestros servicios</small>
+
+      <h2>Elige tu estilo</h2>
+
+      <p>
+        Servicios profesionales para que salgas
+        con una imagen impecable.
       </p>
 
-      <!-- Tu enlace de Calendly -->
-      <a href="https://calendly.com/jhairtupa34/30min" target="_blank" class="btn-reserve">
-        <i class="fa-solid fa-calendar-days"></i> Reservar Mi Turno
-      </a>
     </div>
 
-    <!-- Lista de Servicios -->
-    <div class="card">
-      <div class="section-title">
-        <i class="fa-solid fa-list"></i> Menú de Servicios
-      </div>
-      <div class="services">
-        <div class="service-item">
-          <div class="service-info">
-            <span class="service-name">Corte Clásico / Degradado</span>
-            <span class="service-desc">Incluye lavado y peinado con cera</span>
-          </div>
-          <span class="service-price">$10</span>
-        </div>
-        <div class="service-item">
-          <div class="service-info">
-            <span class="service-name">Perfilado & Arreglo de Barba</span>
-            <span class="service-desc">Con toalla caliente y aceites</span>
-          </div>
-          <span class="service-price">$6</span>
-        </div>
-        <div class="service-item">
-          <div class="service-info">
-            <span class="service-name">Combo VIP (Corte + Barba)</span>
-            <span class="service-desc">Servicio completo de corte y perfilado</span>
-          </div>
-          <span class="service-price">$14</span>
-        </div>
-        <div class="service-item">
-          <div class="service-info">
-            <span class="service-name">Corte Infantil</span>
-            <span class="service-desc">Para niños menores de 10 años</span>
-          </div>
-          <span class="service-price">$8</span>
-        </div>
-      </div>
-    </div>
 
-    <!-- Información de Contacto y Ubicación -->
-    <div class="card">
-      <div class="section-title">
-        <i class="fa-solid fa-location-dot"></i> Ubicación y Horarios
+    <div class="services-grid">
+
+
+      <div class="service">
+
+        <div class="service-left">
+
+          <div class="service-icon">
+            <i class="fa-solid fa-scissors"></i>
+          </div>
+
+          <div>
+
+            <h3>Corte clásico / Degradado</h3>
+
+            <p>
+              Corte, lavado y peinado.
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="price">
+          Bs 70
+        </div>
+
       </div>
-      <div class="info-item">
-        <i class="fa-solid fa-map-pin"></i>
-        <span>Avenida Tomás Barrón entre Calle 11</span>
+
+
+
+      <div class="service">
+
+        <div class="service-left">
+
+          <div class="service-icon">
+            <i class="fa-solid fa-user"></i>
+          </div>
+
+          <div>
+
+            <h3>Perfilado de barba</h3>
+
+            <p>
+              Arreglo y definición de barba.
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="price">
+          Bs 40
+        </div>
+
       </div>
-      <div class="info-item">
-        <i class="fa-solid fa-clock"></i>
-        <span>Lunes a Sábado: 08:15 – 22:00</span>
+
+
+
+      <div class="service">
+
+        <div class="service-left">
+
+          <div class="service-icon">
+            <i class="fa-solid fa-crown"></i>
+          </div>
+
+          <div>
+
+            <h3>Combo VIP</h3>
+
+            <p>
+              Corte + arreglo de barba.
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="price">
+          Bs 100
+        </div>
+
       </div>
-      <div class="info-item">
-        <i class="fa-solid fa-phone"></i>
-        <span>Consultas o dudas por WhatsApp</span>
+
+
+
+      <div class="service">
+
+        <div class="service-left">
+
+          <div class="service-icon">
+            <i class="fa-solid fa-child"></i>
+          </div>
+
+          <div>
+
+            <h3>Corte infantil</h3>
+
+            <p>
+              Corte para los más pequeños.
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="price">
+          Bs 50
+        </div>
+
       </div>
+
+
     </div>
 
   </div>
 
-  <!-- Botón Flotante de WhatsApp (Cambia el número de teléfono abajo si deseas) -->
-  <a href="https://wa.me/?text=Hola,%20quisiera%20consultar%20sobre%20un%20turno" class="whatsapp-btn" target="_blank">
-    <i class="fa-brands fa-whatsapp"></i>
-  </a>
+</section>
+
+
+
+<!-- =========================
+     RESERVAS
+========================= -->
+
+<section id="reservas">
+
+  <div class="container">
+
+    <div class="booking-box">
+
+      <div class="booking-icon">
+
+        <i class="fa-regular fa-calendar-check"></i>
+
+      </div>
+
+      <h2>Reserva tu turno</h2>
+
+      <p>
+        Selecciona el día y horario que más te convenga.
+        Tu reserva se realizará mediante nuestro sistema online.
+      </p>
+
+      <a
+        href="https://calendly.com/jhairtupa34/30min"
+        target="_blank"
+        class="booking-btn">
+
+        <i class="fa-solid fa-calendar-days"></i>
+
+        Reservar ahora
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     INFORMACIÓN
+========================= -->
+
+<section id="ubicacion">
+
+  <div class="container">
+
+    <div class="section-heading">
+
+      <small>Información</small>
+
+      <h2>Visítanos</h2>
+
+    </div>
+
+
+    <div class="info-grid">
+
+
+      <div class="info-card">
+
+        <i class="fa-solid fa-location-dot"></i>
+
+        <h3>Ubicación</h3>
+
+        <p>
+          Avenida Tomás Barrón<br>
+          entre Calle 11
+        </p>
+
+      </div>
+
+
+
+      <div class="info-card">
+
+        <i class="fa-regular fa-clock"></i>
+
+        <h3>Horario</h3>
+
+        <p>
+          Lunes a sábado<br>
+          08:15 – 22:00
+        </p>
+
+      </div>
+
+
+
+      <div class="info-card">
+
+        <i class="fa-brands fa-whatsapp"></i>
+
+        <h3>Contacto</h3>
+
+        <p>
+          Escríbenos por WhatsApp
+          para cualquier consulta.
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     CTA FINAL
+========================= -->
+
+<section class="final-cta">
+
+  <div class="container cta-content">
+
+    <h2>
+      ¿Listo para tu próximo corte?
+    </h2>
+
+    <p>
+      Reserva tu turno y deja tu estilo en manos profesionales.
+    </p>
+
+    <a
+      href="https://calendly.com/jhairtupa34/30min"
+      target="_blank"
+      class="btn btn-gold">
+
+      <i class="fa-solid fa-calendar-check"></i>
+
+      Reservar mi turno
+
+    </a>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+  <p>
+    © 2026 <strong>Barbería Pro</strong>.
+    Todos los derechos reservados.
+  </p>
+
+  <p>
+    Página web creada como proyecto.
+  </p>
+
+</footer>
+
+
+
+<!-- =========================
+     WHATSAPP
+========================= -->
+
+<a
+  href="https://wa.me/?text=Hola,%20quisiera%20consultar%20sobre%20un%20turno"
+  target="_blank"
+  class="whatsapp"
+  aria-label="WhatsApp">
+
+  <i class="fa-brands fa-whatsapp"></i>
+
+</a>
+
 
 </body>
 </html>
