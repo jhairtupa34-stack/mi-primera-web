@@ -17,13 +17,13 @@
             color: #f1f1f1;
         }
 
-        /* Banner de Portada Principal con Imagen de Fondo */
+        /* Banner de Portada Principal */
         .hero-banner {
             width: 100%;
             background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.85)), 
                         url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=1200&auto=format&fit=crop') center/cover no-repeat;
             text-align: center;
-            padding: 70px 20px;
+            padding: 60px 20px;
             border-bottom: 3px solid #c4a468;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
         }
@@ -41,13 +41,38 @@
             font-size: 1.2rem;
             color: #e2ded4;
             letter-spacing: 2px;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             text-transform: uppercase;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+        }
+
+        /* Indicador de Estado (Abierto/Cerrado) */
+        .status-badge {
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .status-open {
+            background-color: rgba(37, 211, 102, 0.2);
+            color: #25d366;
+            border: 1px solid #25d366;
+        }
+
+        .status-closed {
+            background-color: rgba(255, 77, 77, 0.2);
+            color: #ff4d4d;
+            border: 1px solid #ff4d4d;
         }
 
         .hero-banner .btn-whatsapp {
-            display: inline-block;
+            display: block;
+            width: fit-content;
+            margin: 0 auto;
             background-color: #25d366;
             color: white;
             padding: 14px 28px;
@@ -63,7 +88,6 @@
             transform: translateY(-3px);
         }
 
-        /* Contenedor principal */
         .container {
             max-width: 800px;
             margin: 30px auto;
@@ -81,7 +105,7 @@
             padding-bottom: 5px;
         }
 
-        /* Sección de Reservas Ultra Llamativa */
+        /* Sección de Reservas */
         .booking-section {
             background: linear-gradient(145deg, #1f1a14, #141414);
             padding: 35px 25px;
@@ -89,16 +113,13 @@
             border-radius: 16px;
             margin-bottom: 40px;
             border: 2px solid #c4a468;
-            box-shadow: 0 0 20px rgba(196, 164, 104, 0.3), inset 0 0 15px rgba(196, 164, 104, 0.1);
-            position: relative;
-            overflow: hidden;
+            box-shadow: 0 0 20px rgba(196, 164, 104, 0.3);
         }
 
         .booking-section h2 {
             color: #ffffff;
             font-size: 2rem;
             margin-bottom: 12px;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
         }
 
         .booking-section p {
@@ -117,15 +138,31 @@
             border-radius: 50px;
             font-size: 1.15rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
             box-shadow: 0 6px 20px rgba(196, 164, 104, 0.4);
             transition: all 0.3s ease;
         }
 
         .btn-calendly:hover {
-            background: linear-gradient(135deg, #e5cb93 0%, #d8b87a 100%);
             transform: translateY(-3px) scale(1.03);
             box-shadow: 0 10px 25px rgba(196, 164, 104, 0.6);
+        }
+
+        /* Buscador interactivo */
+        .search-box {
+            width: 100%;
+            padding: 14px 20px;
+            background-color: #1e1e1e;
+            border: 1px solid #333;
+            border-radius: 10px;
+            color: #fff;
+            font-size: 1rem;
+            margin-bottom: 25px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .search-box:focus {
+            border-color: #c4a468;
         }
 
         /* Servicios Grid */
@@ -206,6 +243,73 @@
             transform: scale(1.05);
         }
 
+        /* Cotizador Interactivo */
+        .calculator-section {
+            background-color: #1e1e1e;
+            padding: 30px 20px;
+            border-radius: 12px;
+            margin-top: 40px;
+            border: 1px solid #333;
+        }
+
+        .calculator-section h3 {
+            color: #c4a468;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .calc-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #2a2a2a;
+        }
+
+        .calc-item label {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .calc-item input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: #c4a468;
+            cursor: pointer;
+        }
+
+        .total-box {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .total-box span {
+            color: #c4a468;
+        }
+
+        .btn-calc-wa {
+            display: block;
+            width: 100%;
+            text-align: center;
+            margin-top: 15px;
+            background-color: #25d366;
+            color: white;
+            padding: 12px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: background 0.3s;
+        }
+
+        .btn-calc-wa:hover {
+            background-color: #20ba5a;
+        }
+
         /* Información y Ubicación */
         .info-section {
             background-color: #1e1e1e;
@@ -234,12 +338,11 @@
             text-decoration: none;
             border-radius: 8px;
             font-size: 0.9rem;
-            transition: background 0.3s, transform 0.2s;
+            transition: background 0.3s;
         }
 
         .btn-maps:hover {
             background-color: #0369a1;
-            transform: scale(1.03);
         }
 
         footer {
@@ -254,16 +357,17 @@
 </head>
 <body>
 
-    <!-- Encabezado de Portada con Imagen de Fondo -->
+    <!-- Encabezado con Estado Interactivo -->
     <header class="hero-banner">
         <h1 class="hero-title">STYLO TUPAY</h1>
         <p class="hero-subtitle">Peluquería & Barbería Profesional</p>
+        <div id="statusBadge" class="status-badge">Cargando estado...</div>
         <a href="https://wa.me/59172312883?text=Hola,%20quisiera%20consultar%20sobre%20los%20cortes" class="btn-whatsapp" target="_blank" rel="noopener noreferrer">💬 Escribir al WhatsApp</a>
     </header>
 
     <div class="container">
 
-        <!-- Sección de Reservas Destacada -->
+        <!-- Sección de Reservas -->
         <div class="booking-section">
             <h2>📅 RESERVA TU CITA ONLINE</h2>
             <p>Elige tu horario ideal en segundos y asegura tu atención sin filas:</p>
@@ -273,11 +377,13 @@
         </div>
 
         <h2 class="section-title">NUESTROS SERVICIOS</h2>
+
+        <!-- Buscador Interactivo -->
+        <input type="text" id="searchInput" class="search-box" placeholder="🔍 Buscar servicio (ej. Corte, Barba, Combo)..." onkeyup="filterServices()">
         
-        <div class="menu-grid">
+        <div class="menu-grid" id="servicesGrid">
             
-            <!-- Servicio 1 -->
-            <div class="card">
+            <div class="card" data-title="corte clasico moderno">
                 <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?q=80&w=500&auto=format&fit=crop" alt="Corte Clásico">
                 <div class="card-body">
                     <div class="card-title">Corte Clásico / Moderno</div>
@@ -289,8 +395,7 @@
                 </div>
             </div>
 
-            <!-- Servicio 2 -->
-            <div class="card">
+            <div class="card" data-title="perfilado de barba">
                 <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?q=80&w=500&auto=format&fit=crop" alt="Barba">
                 <div class="card-body">
                     <div class="card-title">Perfilado de Barba</div>
@@ -302,8 +407,7 @@
                 </div>
             </div>
 
-            <!-- Servicio 3 -->
-            <div class="card">
+            <div class="card" data-title="combo vip corte barba">
                 <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=500&auto=format&fit=crop" alt="Combo Completo">
                 <div class="card-body">
                     <div class="card-title">Combo VIP (Corte + Barba)</div>
@@ -317,7 +421,34 @@
 
         </div>
 
-        <!-- Sección de Ubicación y Horarios -->
+        <!-- Cotizador / Calculadora Interactiva -->
+        <div class="calculator-section">
+            <h3>🧮 Armá tu Combo y Cotizá</h3>
+            <p style="text-align: center; color: #aaa; margin-bottom: 15px; font-size: 0.9rem;">Selecciona los servicios que deseas para calcular el precio total:</p>
+            
+            <div class="calc-item">
+                <label><input type="checkbox" value="35" data-name="Corte Clásico/Moderno" onchange="calculateTotal()"> Corte Clásico / Moderno</label>
+                <span style="color:#c4a468; font-weight:bold;">Bs 35</span>
+            </div>
+            <div class="calc-item">
+                <label><input type="checkbox" value="25" data-name="Perfilado de Barba" onchange="calculateTotal()"> Perfilado de Barba</label>
+                <span style="color:#c4a468; font-weight:bold;">Bs 25</span>
+            </div>
+            <div class="calc-item">
+                <label><input type="checkbox" value="20" data-name="Lavado y Peinado Extra" onchange="calculateTotal()"> Lavado y Tratamiento Capilar</label>
+                <span style="color:#c4a468; font-weight:bold;">Bs 20</span>
+            </div>
+
+            <div class="total-box">
+                Total Estimado: <span id="totalAmount">Bs 0</span>
+            </div>
+
+            <a id="waCalcBtn" href="#" class="btn-calc-wa" target="_blank" style="display: none;">
+                💬 Pedir este Paquete por WhatsApp
+            </a>
+        </div>
+
+        <!-- Información y Ubicación -->
         <div class="info-section">
             <h3>📍 Encuéntranos</h3>
             <p><strong>Horarios:</strong> Lunes a Sábado de 09:00 a 20:00</p>
@@ -327,10 +458,71 @@
 
     </div>
 
-    <!-- Pie de página -->
     <footer>
         <p>© 2026 Stylo Tupay - Desarrollado por Jhair Tupa Web Design</p>
     </footer>
 
+    <!-- JavaScript para Interactividad -->
+    <script>
+        // 1. Estado en tiempo real (Abierto/Cerrado)
+        function checkOpenStatus() {
+            const now = new Date();
+            const day = now.getDay(); // 0: Domingo, 1-6: Lunes a Sábado
+            const hour = now.getHours();
+            const badge = document.getElementById('statusBadge');
+
+            // Abierto de Lunes a Sábado (1-6) de 9:00 a 20:00
+            if (day >= 1 && day <= 6 && hour >= 9 && hour < 20) {
+                badge.textContent = "● ABIERTO AHORA";
+                badge.className = "status-badge status-open";
+            } else {
+                badge.textContent = "● CERRADO AHORA";
+                badge.className = "status-badge status-closed";
+            }
+        }
+
+        // 2. Filtro de búsqueda de servicios
+        function filterServices() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const cards = document.querySelectorAll('#servicesGrid .card');
+
+            cards.forEach(card => {
+                const title = card.getAttribute('data-title');
+                if (title.includes(input)) {
+                    card.style.display = "flex";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        }
+
+        // 3. Calculadora de Total
+        function calculateTotal() {
+            const checkboxes = document.querySelectorAll('.calc-item input[type="checkbox"]');
+            let total = 0;
+            let selectedServices = [];
+
+            checkboxes.forEach(cb => {
+                if (cb.checked) {
+                    total += parseInt(cb.value);
+                    selectedServices.push(cb.getAttribute('data-name'));
+                }
+            });
+
+            document.getElementById('totalAmount').textContent = `Bs ${total}`;
+
+            const waBtn = document.getElementById('waCalcBtn');
+            if (total > 0) {
+                const message = encodeURIComponent(`Hola, quiero cotizar/reservar los siguientes servicios: ${selectedServices.join(', ')}. Total estimado: Bs ${total}`);
+                waBtn.href = `https://wa.me/59172312883?text=${message}`;
+                waBtn.style.display = "block";
+            } else {
+                waBtn.style.display = "none";
+            }
+        }
+
+        // Inicializar estado al cargar
+        checkOpenStatus();
+    </script>
 </body>
 </html>
