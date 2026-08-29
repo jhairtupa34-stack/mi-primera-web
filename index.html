@@ -17,48 +17,50 @@
             color: #f1f1f1;
         }
 
-        /* Banner de Portada Principal */
+        /* Banner de Portada Principal con Imagen de Fondo */
         .hero-banner {
             width: 100%;
-            background: linear-gradient(135deg, #1c1a17 0%, #0a0a0a 100%);
+            background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.85)), 
+                        url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=1200&auto=format&fit=crop') center/cover no-repeat;
             text-align: center;
-            padding: 50px 20px;
+            padding: 70px 20px;
             border-bottom: 3px solid #c4a468;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
         }
 
         .hero-title {
-            font-size: 2.8rem;
+            font-size: 3rem;
             color: #c4a468;
-            letter-spacing: 3px;
+            letter-spacing: 4px;
             text-transform: uppercase;
             margin-bottom: 5px;
-            text-shadow: 0 2px 10px rgba(196, 164, 104, 0.3);
+            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.9);
         }
 
         .hero-subtitle {
-            font-size: 1.1rem;
-            color: #ccc;
+            font-size: 1.2rem;
+            color: #e2ded4;
             letter-spacing: 2px;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             text-transform: uppercase;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
         }
 
         .hero-banner .btn-whatsapp {
             display: inline-block;
             background-color: #25d366;
             color: white;
-            padding: 12px 25px;
+            padding: 14px 28px;
             text-decoration: none;
             font-weight: bold;
             border-radius: 30px;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
             transition: transform 0.2s ease, background-color 0.2s ease;
         }
 
         .hero-banner .btn-whatsapp:hover {
             background-color: #20ba5a;
-            transform: translateY(-2px);
+            transform: translateY(-3px);
         }
 
         /* Contenedor principal */
@@ -79,42 +81,51 @@
             padding-bottom: 5px;
         }
 
-        /* Sección de Reservas Manteniéndose Intacta */
+        /* Sección de Reservas Ultra Llamativa */
         .booking-section {
-            background-color: #1e1e1e;
-            padding: 30px 20px;
+            background: linear-gradient(145deg, #1f1a14, #141414);
+            padding: 35px 25px;
             text-align: center;
-            border-radius: 12px;
+            border-radius: 16px;
             margin-bottom: 40px;
-            border: 1px solid #333;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            border: 2px solid #c4a468;
+            box-shadow: 0 0 20px rgba(196, 164, 104, 0.3), inset 0 0 15px rgba(196, 164, 104, 0.1);
+            position: relative;
+            overflow: hidden;
         }
 
         .booking-section h2 {
-            color: #c4a468;
-            margin-bottom: 10px;
+            color: #ffffff;
+            font-size: 2rem;
+            margin-bottom: 12px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
         }
 
         .booking-section p {
-            color: #aaa;
-            margin-bottom: 20px;
+            color: #d1d1d1;
+            font-size: 1.05rem;
+            margin-bottom: 25px;
         }
 
         .btn-calendly {
             display: inline-block;
-            background-color: #c4a468;
+            background: linear-gradient(135deg, #d8b87a 0%, #c4a468 100%);
             color: #121212;
-            padding: 14px 28px;
+            padding: 16px 36px;
             text-decoration: none;
-            font-weight: bold;
-            border-radius: 8px;
-            font-size: 1rem;
-            transition: background 0.3s, transform 0.2s;
+            font-weight: 800;
+            border-radius: 50px;
+            font-size: 1.15rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 6px 20px rgba(196, 164, 104, 0.4);
+            transition: all 0.3s ease;
         }
 
         .btn-calendly:hover {
-            background-color: #d8b87a;
-            transform: scale(1.02);
+            background: linear-gradient(135deg, #e5cb93 0%, #d8b87a 100%);
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 10px 25px rgba(196, 164, 104, 0.6);
         }
 
         /* Servicios Grid */
@@ -243,7 +254,7 @@
 </head>
 <body>
 
-    <!-- Encabezado de Portada con Estilo Barbería -->
+    <!-- Encabezado de Portada con Imagen de Fondo -->
     <header class="hero-banner">
         <h1 class="hero-title">STYLO TUPAY</h1>
         <p class="hero-subtitle">Peluquería & Barbería Profesional</p>
@@ -252,12 +263,12 @@
 
     <div class="container">
 
-        <!-- Sección de Reservas Manteniéndose Intacta -->
+        <!-- Sección de Reservas Destacada -->
         <div class="booking-section">
-            <h2>📅 Reserva tu Cita Online</h2>
-            <p>Elige el horario que mejor te quede sin esperar turnos:</p>
+            <h2>📅 RESERVA TU CITA ONLINE</h2>
+            <p>Elige tu horario ideal en segundos y asegura tu atención sin filas:</p>
             <a href="https://calendly.com/jhairtupa34/30min" class="btn-calendly" target="_blank" rel="noopener noreferrer">
-                🕒 Agendar Cita Aquí
+                🕒 AGENDAR CITA AQUÍ
             </a>
         </div>
 
