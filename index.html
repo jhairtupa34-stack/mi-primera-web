@@ -98,6 +98,7 @@
             text-align: center;
             color: #c4a468;
             margin-bottom: 25px;
+            margin-top: 40px;
             font-size: 1.8rem;
             border-bottom: 2px solid #c4a468;
             display: inline-block;
@@ -165,7 +166,7 @@
             border-color: #c4a468;
         }
 
-        /* Servicios Grid */
+        /* Grid genérico para Servicios y Productos */
         .menu-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -379,7 +380,7 @@
         <h2 class="section-title">NUESTROS SERVICIOS</h2>
 
         <!-- Buscador Interactivo -->
-        <input type="text" id="searchInput" class="search-box" placeholder="🔍 Buscar servicio (ej. Corte, Barba, Combo)..." onkeyup="filterServices()">
+        <input type="text" id="searchInput" class="search-box" placeholder="🔍 Buscar servicio o producto..." onkeyup="filterServices()">
         
         <div class="menu-grid" id="servicesGrid">
             
@@ -421,6 +422,52 @@
 
         </div>
 
+        <!-- SECCIÓN DE PRODUCTOS Y HERRAMIENTAS -->
+        <h2 class="section-title">💈 TIENDA & PRODUCTOS DE BARBERÍA</h2>
+        
+        <div class="menu-grid" id="productsGrid">
+            
+            <!-- Producto 1 -->
+            <div class="card" data-title="maquina de cortar cabello patillera trimmer">
+                <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?q=80&w=500&auto=format&fit=crop" alt="Máquina Trimmer Professional">
+                <div class="card-body">
+                    <div class="card-title">Máquina Trimmer Profesional</div>
+                    <div class="card-desc">Patillera de alta precisión para marcados, líneas y acabados perfectos.</div>
+                    <div class="card-footer">
+                        <span class="price">Bs 220</span>
+                        <a href="https://wa.me/59172312883?text=Hola,%20quiero%20comprar%20la%20Maquina%20Trimmer%20Profesional" class="btn-pedir" target="_blank" rel="noopener noreferrer">Comprar</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 2 -->
+            <div class="card" data-title="cera pomada moldeadora cabello fijacion">
+                <img src="https://images.unsplash.com/photo-1597354984706-fac992d9306f?q=80&w=500&auto=format&fit=crop" alt="Cera Pomada">
+                <div class="card-body">
+                    <div class="card-title">Pomada Moldeadora Premium</div>
+                    <div class="card-desc">Fijación fuerte y brillo natural a base de agua. Fácil de lavar.</div>
+                    <div class="card-footer">
+                        <span class="price">Bs 60</span>
+                        <a href="https://wa.me/59172312883?text=Hola,%20quiero%20comprar%20la%20Pomada%20Moldeadora" class="btn-pedir" target="_blank" rel="noopener noreferrer">Comprar</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 3 -->
+            <div class="card" data-title="aceite hidratante para barba crecimiento">
+                <img src="https://images.unsplash.com/photo-1608248597261-e4d09447027a?q=80&w=500&auto=format&fit=crop" alt="Aceite de Barba">
+                <div class="card-body">
+                    <div class="card-title">Aceite Hidratante para Barba</div>
+                    <div class="card-desc">Nutre el vello facial, suave al tacto y previene la irritación de la piel.</div>
+                    <div class="card-footer">
+                        <span class="price">Bs 45</span>
+                        <a href="https://wa.me/59172312883?text=Hola,%20quiero%20comprar%20el%20Aceite%20de%20Barba" class="btn-pedir" target="_blank" rel="noopener noreferrer">Comprar</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
         <!-- Cotizador / Calculadora Interactiva -->
         <div class="calculator-section">
             <h3>🧮 Armá tu Combo y Cotizá</h3>
@@ -435,7 +482,7 @@
                 <span style="color:#c4a468; font-weight:bold;">Bs 25</span>
             </div>
             <div class="calc-item">
-                <label><input type="checkbox" value="20" data-name="Lavado y Peinado Extra" onchange="calculateTotal()"> Lavado y Tratamiento Capilar</label>
+                <label><input type="checkbox" value="20" data-name="Lavado y Tratamiento Capilar" onchange="calculateTotal()"> Lavado y Tratamiento Capilar</label>
                 <span style="color:#c4a468; font-weight:bold;">Bs 20</span>
             </div>
 
@@ -467,11 +514,10 @@
         // 1. Estado en tiempo real (Abierto/Cerrado)
         function checkOpenStatus() {
             const now = new Date();
-            const day = now.getDay(); // 0: Domingo, 1-6: Lunes a Sábado
+            const day = now.getDay(); 
             const hour = now.getHours();
             const badge = document.getElementById('statusBadge');
 
-            // Abierto de Lunes a Sábado (1-6) de 9:00 a 20:00
             if (day >= 1 && day <= 6 && hour >= 9 && hour < 20) {
                 badge.textContent = "● ABIERTO AHORA";
                 badge.className = "status-badge status-open";
@@ -481,14 +527,14 @@
             }
         }
 
-        // 2. Filtro de búsqueda de servicios
+        // 2. Filtro de búsqueda de servicios y productos
         function filterServices() {
             const input = document.getElementById('searchInput').value.toLowerCase();
-            const cards = document.querySelectorAll('#servicesGrid .card');
+            const cards = document.querySelectorAll('.card');
 
             cards.forEach(card => {
                 const title = card.getAttribute('data-title');
-                if (title.includes(input)) {
+                if (title && title.includes(input)) {
                     card.style.display = "flex";
                 } else {
                     card.style.display = "none";
@@ -513,16 +559,4 @@
 
             const waBtn = document.getElementById('waCalcBtn');
             if (total > 0) {
-                const message = encodeURIComponent(`Hola, quiero cotizar/reservar los siguientes servicios: ${selectedServices.join(', ')}. Total estimado: Bs ${total}`);
-                waBtn.href = `https://wa.me/59172312883?text=${message}`;
-                waBtn.style.display = "block";
-            } else {
-                waBtn.style.display = "none";
-            }
-        }
-
-        // Inicializar estado al cargar
-        checkOpenStatus();
-    </script>
-</body>
-</html>
+                const message = encodeURICom
