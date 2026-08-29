@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barbería & Estilo | Reserva tu Cita</title>
+    <title>Stylo Tupay | Peluquería & Barbería</title>
     <style>
         * {
             margin: 0;
@@ -17,29 +17,28 @@
             color: #f1f1f1;
         }
 
-        /* Encabezado */
-        header {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=1000&auto=format&fit=crop') center/cover;
-            color: white;
+        /* Banner de Imagen Principal */
+        .hero-banner {
+            width: 100%;
+            background-color: #e2ded4;
             text-align: center;
-            padding: 60px 20px;
-            border-bottom: 3px solid #ffb703;
+            padding: 20px 10px;
+            border-bottom: 3px solid #c4a468;
         }
 
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            color: #ffb703;
+        .hero-banner img {
+            max-width: 100%;
+            width: 650px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            display: block;
+            margin: 0 auto;
         }
 
-        header p {
-            font-size: 1.1rem;
-            margin-bottom: 20px;
-            color: #ccc;
-        }
-
-        .btn-whatsapp {
+        .hero-banner .btn-whatsapp {
             display: inline-block;
+            margin-top: 18px;
             background-color: #25d366;
             color: white;
             padding: 12px 25px;
@@ -58,10 +57,10 @@
 
         h2.section-title {
             text-align: center;
-            color: #ffb703;
+            color: #c4a468;
             margin-bottom: 25px;
             font-size: 1.8rem;
-            border-bottom: 2px solid #ffb703;
+            border-bottom: 2px solid #c4a468;
             display: inline-block;
             width: 100%;
             padding-bottom: 5px;
@@ -74,11 +73,12 @@
             text-align: center;
             border-radius: 12px;
             margin-bottom: 40px;
+            border: 1px solid #333;
             box-shadow: 0 4px 10px rgba(0,0,0,0.5);
         }
 
         .booking-section h2 {
-            color: #ffb703;
+            color: #c4a468;
             margin-bottom: 10px;
         }
 
@@ -89,8 +89,8 @@
 
         .btn-calendly {
             display: inline-block;
-            background-color: #d90429;
-            color: white;
+            background-color: #c4a468;
+            color: #121212;
             padding: 14px 28px;
             text-decoration: none;
             font-weight: bold;
@@ -100,7 +100,7 @@
         }
 
         .btn-calendly:hover {
-            background-color: #ef233c;
+            background-color: #d8b87a;
         }
 
         /* Servicios Grid */
@@ -114,6 +114,7 @@
             background: #1e1e1e;
             border-radius: 12px;
             overflow: hidden;
+            border: 1px solid #2a2a2a;
             box-shadow: 0 4px 10px rgba(0,0,0,0.3);
             display: flex;
             flex-direction: column;
@@ -155,12 +156,12 @@
         .price {
             font-size: 1.2rem;
             font-weight: bold;
-            color: #ffb703;
+            color: #c4a468;
         }
 
         .btn-pedir {
-            background-color: #ff9f1c;
-            color: white;
+            background-color: #c4a468;
+            color: #121212;
             text-decoration: none;
             padding: 8px 15px;
             border-radius: 6px;
@@ -175,6 +176,7 @@
             text-align: center;
             margin-top: 40px;
             border-radius: 12px;
+            border: 1px solid #333;
         }
 
         .info-section h3 {
@@ -209,10 +211,9 @@
 </head>
 <body>
 
-    <!-- Banner Principal -->
-    <header>
-        <h1>Barbería & Estilo ✂️</h1>
-        <p>Los mejores cortes, perfilado de barba y atención personalizada</p>
+    <!-- Imagen de Portada Principal integrada directamente -->
+    <header class="hero-banner">
+        <img src="logo-stylo-tupay.jpg" alt="Stylo Tupay Peluquería Barbería">
         <a href="https://wa.me/59172312883?text=Hola,%20quisiera%20consultar%20sobre%20los%20cortes" class="btn-whatsapp" target="_blank">💬 Escribir al WhatsApp</a>
     </header>
 
@@ -284,9 +285,8 @@
 
     <!-- Pie de página -->
     <footer>
-        <p>© 2026 Barbería & Estilo - Desarrollado por Jhair Tupa Web Design</p>
+        <p>© 2026 Stylo Tupay - Desarrollado por Jhair Tupa Web Design</p>
     </footer>
 
 </body>
 </html>
-
