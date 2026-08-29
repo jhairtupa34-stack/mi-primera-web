@@ -21,7 +21,7 @@
         .hero-banner {
             width: 100%;
             background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.85)), 
-                        url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=1200&auto=format&fit=crop') center/cover no-repeat;
+                        url('https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=1200&auto=format&fit=crop') center/cover no-repeat;
             text-align: center;
             padding: 60px 20px;
             border-bottom: 3px solid #c4a468;
@@ -166,7 +166,7 @@
             border-color: #c4a468;
         }
 
-        /* Grid genérico para Servicios y Productos */
+        /* Grid */
         .menu-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -362,7 +362,7 @@
     <header class="hero-banner">
         <h1 class="hero-title">STYLO TUPAY</h1>
         <p class="hero-subtitle">Peluquería & Barbería Profesional</p>
-        <div id="statusBadge" class="status-badge">Cargando estado...</div>
+        <div id="statusBadge" class="status-badge">...</div>
         <a href="https://wa.me/59172312883?text=Hola,%20quisiera%20consultar%20sobre%20los%20cortes" class="btn-whatsapp" target="_blank" rel="noopener noreferrer">💬 Escribir al WhatsApp</a>
     </header>
 
@@ -385,7 +385,7 @@
         <div class="menu-grid" id="servicesGrid">
             
             <div class="card" data-title="corte clasico moderno">
-                <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?q=80&w=500&auto=format&fit=crop" alt="Corte Clásico">
+                <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?q=80&w=500&auto=format&fit=crop" alt="Corte Clásico">
                 <div class="card-body">
                     <div class="card-title">Corte Clásico / Moderno</div>
                     <div class="card-desc">Incluye lavado, corte al estilo deseado, perfilado con navaja y peinado final.</div>
@@ -427,9 +427,8 @@
         
         <div class="menu-grid" id="productsGrid">
             
-            <!-- Producto 1 -->
             <div class="card" data-title="maquina de cortar cabello patillera trimmer">
-                <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?q=80&w=500&auto=format&fit=crop" alt="Máquina Trimmer Professional">
+                <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?q=80&w=500&auto=format&fit=crop" alt="Máquina Trimmer Professional">
                 <div class="card-body">
                     <div class="card-title">Máquina Trimmer Profesional</div>
                     <div class="card-desc">Patillera de alta precisión para marcados, líneas y acabados perfectos.</div>
@@ -440,9 +439,8 @@
                 </div>
             </div>
 
-            <!-- Producto 2 -->
             <div class="card" data-title="cera pomada moldeadora cabello fijacion">
-                <img src="https://images.unsplash.com/photo-1597354984706-fac992d9306f?q=80&w=500&auto=format&fit=crop" alt="Cera Pomada">
+                <img src="https://images.unsplash.com/photo-1626285861696-9f0bf5a49c6d?q=80&w=500&auto=format&fit=crop" alt="Cera Pomada">
                 <div class="card-body">
                     <div class="card-title">Pomada Moldeadora Premium</div>
                     <div class="card-desc">Fijación fuerte y brillo natural a base de agua. Fácil de lavar.</div>
@@ -453,9 +451,8 @@
                 </div>
             </div>
 
-            <!-- Producto 3 -->
             <div class="card" data-title="aceite hidratante para barba crecimiento">
-                <img src="https://images.unsplash.com/photo-1608248597261-e4d09447027a?q=80&w=500&auto=format&fit=crop" alt="Aceite de Barba">
+                <img src="https://images.unsplash.com/photo-1617897903246-719242758050?q=80&w=500&auto=format&fit=crop" alt="Aceite de Barba">
                 <div class="card-body">
                     <div class="card-title">Aceite Hidratante para Barba</div>
                     <div class="card-desc">Nutre el vello facial, suave al tacto y previene la irritación de la piel.</div>
@@ -468,7 +465,7 @@
 
         </div>
 
-        <!-- Cotizador / Calculadora Interactiva -->
+        <!-- Cotizador Interactivo -->
         <div class="calculator-section">
             <h3>🧮 Armá tu Combo y Cotizá</h3>
             <p style="text-align: center; color: #aaa; margin-bottom: 15px; font-size: 0.9rem;">Selecciona los servicios que deseas para calcular el precio total:</p>
@@ -559,4 +556,5 @@
 
             const waBtn = document.getElementById('waCalcBtn');
             if (total > 0) {
-                const message = encodeURICom
+                const message = encodeURIComponent(`Hola, quiero cotizar/reservar los siguientes servicios: ${selectedServices.join(', ')}. Total estimado: Bs ${total}`);
+                waBtn.href = `http
