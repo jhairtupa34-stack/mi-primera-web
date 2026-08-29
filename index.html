@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -46,6 +47,12 @@
             font-weight: bold;
             border-radius: 30px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+
+        .hero-banner .btn-whatsapp:hover {
+            opacity: 0.9;
+            transform: scale(1.03);
         }
 
         /* Contenedor principal */
@@ -96,11 +103,12 @@
             font-weight: bold;
             border-radius: 8px;
             font-size: 1rem;
-            transition: background 0.3s;
+            transition: background 0.3s, transform 0.2s;
         }
 
         .btn-calendly:hover {
             background-color: #d8b87a;
+            transform: scale(1.02);
         }
 
         /* Servicios Grid */
@@ -118,6 +126,12 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.3);
             display: flex;
             flex-direction: column;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.6);
         }
 
         .card img {
@@ -167,6 +181,12 @@
             border-radius: 6px;
             font-size: 0.85rem;
             font-weight: bold;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .btn-pedir:hover {
+            background-color: #d8b87a;
+            transform: scale(1.05);
         }
 
         /* Información y Ubicación */
@@ -197,6 +217,12 @@
             text-decoration: none;
             border-radius: 8px;
             font-size: 0.9rem;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .btn-maps:hover {
+            background-color: #0369a1;
+            transform: scale(1.03);
         }
 
         footer {
@@ -211,10 +237,10 @@
 </head>
 <body>
 
-    <!-- Imagen de Portada Principal integrada directamente -->
+    <!-- Imagen de Portada Principal -->
     <header class="hero-banner">
-        <img src="logo-stylo-tupay.jpg" alt="Stylo Tupay Peluquería Barbería">
-        <a href="https://wa.me/59172312883?text=Hola,%20quisiera%20consultar%20sobre%20los%20cortes" class="btn-whatsapp" target="_blank">💬 Escribir al WhatsApp</a>
+        <img src="https://i.ibb.co/B2cH7b4W/logo-stylo-tupay.jpg" alt="Stylo Tupay Peluquería Barbería">
+        <a href="https://wa.me/59172312883?text=Hola,%20quisiera%20consultar%20sobre%20los%20cortes" class="btn-whatsapp" target="_blank" rel="noopener noreferrer">💬 Escribir al WhatsApp</a>
     </header>
 
     <div class="container">
@@ -223,7 +249,7 @@
         <div class="booking-section">
             <h2>📅 Reserva tu Cita Online</h2>
             <p>Elige el horario que mejor te quede sin esperar turnos:</p>
-            <a href="https://calendly.com/jhairtupa34/30min" class="btn-calendly" target="_blank">
+            <a href="https://calendly.com/jhairtupa34/30min" class="btn-calendly" target="_blank" rel="noopener noreferrer">
                 🕒 Agendar Cita Aquí
             </a>
         </div>
@@ -240,7 +266,7 @@
                     <div class="card-desc">Incluye lavado, corte al estilo deseado, perfilado con navaja y peinado final.</div>
                     <div class="card-footer">
                         <span class="price">Bs 35</span>
-                        <a href="https://wa.me/59172312883?text=Hola,%20quiero%20reservar%20para%20un%20Corte" class="btn-pedir" target="_blank">Reservar</a>
+                        <a href="https://wa.me/59172312883?text=Hola,%20quiero%20reservar%20para%20un%20Corte" class="btn-pedir" target="_blank" rel="noopener noreferrer">Reservar</a>
                     </div>
                 </div>
             </div>
@@ -253,7 +279,7 @@
                     <div class="card-desc">Arreglo de barba con toallas calientes, aceites hidratantes y acabado perfecto.</div>
                     <div class="card-footer">
                         <span class="price">Bs 25</span>
-                        <a href="https://wa.me/59172312883?text=Hola,%20quiero%20reservar%20para%20Perfilado%20de%20Barba" class="btn-pedir" target="_blank">Reservar</a>
+                        <a href="https://wa.me/59172312883?text=Hola,%20quiero%20reservar%20para%20Perfilado%20de%20Barba" class="btn-pedir" target="_blank" rel="noopener noreferrer">Reservar</a>
                     </div>
                 </div>
             </div>
@@ -266,7 +292,7 @@
                     <div class="card-desc">La experiencia completa: corte de cabello profesional + arreglo completo de barba.</div>
                     <div class="card-footer">
                         <span class="price">Bs 55</span>
-                        <a href="https://wa.me/59172312883?text=Hola,%20quiero%20reservar%20el%20Combo%20VIP" class="btn-pedir" target="_blank">Reservar</a>
+                        <a href="https://wa.me/59172312883?text=Hola,%20quiero%20reservar%20el%20Combo%20VIP" class="btn-pedir" target="_blank" rel="noopener noreferrer">Reservar</a>
                     </div>
                 </div>
             </div>
@@ -278,7 +304,7 @@
             <h3>📍 Encuéntranos</h3>
             <p><strong>Horarios:</strong> Lunes a Sábado de 09:00 a 20:00</p>
             <p><strong>Dirección:</strong> Calle 24 de Septiembre #450 (Zona Central)</p>
-            <a href="https://maps.google.com" class="btn-maps" target="_blank">🗺️ Ver Ubicación en Google Maps</a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Calle+24+de+Septiembre+450" class="btn-maps" target="_blank" rel="noopener noreferrer">🗺️ Ver Ubicación en Google Maps</a>
         </div>
 
     </div>
