@@ -124,6 +124,73 @@
             letter-spacing: 1px;
         }
 
+        /* Tarjeta de Fidelización */
+        .loyalty-card {
+            background: linear-gradient(135deg, #1f1f1f 0%, #141414 100%);
+            border: 2px dashed #c4a468;
+            border-radius: 16px;
+            padding: 25px 20px;
+            margin-bottom: 35px;
+            text-align: center;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .loyalty-title {
+            color: #c4a468;
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .loyalty-desc {
+            font-size: 0.9rem;
+            color: #ccc;
+            margin-bottom: 20px;
+        }
+
+        .stamps-grid {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+
+        .stamp {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 2px solid #333;
+            background-color: #222;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: #555;
+            transition: all 0.3s ease;
+        }
+
+        .stamp.active {
+            border-color: #c4a468;
+            background-color: rgba(196, 164, 104, 0.2);
+            color: #c4a468;
+            box-shadow: 0 0 10px rgba(196, 164, 104, 0.4);
+        }
+
+        .stamp.free {
+            border-color: #25d366;
+            background-color: rgba(37, 211, 102, 0.2);
+            color: #25d366;
+            font-weight: bold;
+        }
+
+        .loyalty-note {
+            font-size: 0.8rem;
+            color: #888;
+        }
+
         h2.section-title {
             text-align: center;
             color: #c4a468;
@@ -404,6 +471,20 @@
             <p class="verse-ref">— Colosenses 3:23</p>
         </div>
 
+        <!-- Tarjeta de Fidelización Digital -->
+        <div class="loyalty-card">
+            <div class="loyalty-title">💳 Club VIP Stylo Tupay</div>
+            <p class="loyalty-desc">¡En tu 5° visita obtienes un <strong>Lavado o Tratamiento Gratis</strong>!</p>
+            <div class="stamps-grid">
+                <div class="stamp active">✂️</div>
+                <div class="stamp active">✂️</div>
+                <div class="stamp">3</div>
+                <div class="stamp">4</div>
+                <div class="stamp free">🎁</div>
+            </div>
+            <p class="loyalty-note">* Solicita tu sello digital en caja en cada corte de cabello.</p>
+        </div>
+
         <!-- Sección de Reservas -->
         <div class="booking-section">
             <h2>📅 RESERVA TU CITA ONLINE</h2>
@@ -508,59 +589,4 @@
             
             <div class="calc-item">
                 <label><input type="checkbox" value="35" data-name="Corte Clásico/Moderno" onchange="calculateTotal()"> Corte Clásico / Moderno</label>
-                <span style="color:#c4a468; font-weight:bold;">Bs 35</span>
-            </div>
-            <div class="calc-item">
-                <label><input type="checkbox" value="25" data-name="Perfilado de Barba" onchange="calculateTotal()"> Perfilado de Barba</label>
-                <span style="color:#c4a468; font-weight:bold;">Bs 25</span>
-            </div>
-            <div class="calc-item">
-                <label><input type="checkbox" value="20" data-name="Lavado y Tratamiento Capilar" onchange="calculateTotal()"> Lavado y Tratamiento Capilar</label>
-                <span style="color:#c4a468; font-weight:bold;">Bs 20</span>
-            </div>
-
-            <div class="total-box">
-                Total Estimado: <span id="totalAmount">Bs 0</span>
-            </div>
-
-            <a id="waCalcBtn" href="#" class="btn-calc-wa" target="_blank" style="display: none;">
-                💬 Pedir este Paquete por WhatsApp
-            </a>
-        </div>
-
-        <!-- Información y Ubicación -->
-        <div class="info-section">
-            <h3>📍 Encuéntranos</h3>
-            <p><strong>Horarios:</strong> Lunes a Sábado de 09:00 a 20:00</p>
-            <p><strong>Dirección:</strong> Calle 24 de Septiembre #450 (Zona Central)</p>
-            <a href="https://www.google.com/maps/search/?api=1&query=Calle+24+de+Septiembre+450" class="btn-maps" target="_blank" rel="noopener noreferrer">🗺️ Ver Ubicación en Google Maps</a>
-        </div>
-
-    </div>
-
-    <footer>
-        <p>© 2026 Stylo Tupay - Desarrollado por Jhair Tupa Web Design</p>
-    </footer>
-
-    <!-- JavaScript para Interactividad -->
-    <script>
-        // 1. Estado en tiempo real (Abierto/Cerrado)
-        function checkOpenStatus() {
-            const now = new Date();
-            const day = now.getDay(); 
-            const hour = now.getHours();
-            const badge = document.getElementById('statusBadge');
-
-            if (day >= 1 && day <= 6 && hour >= 9 && hour < 20) {
-                badge.textContent = "● ABIERTO AHORA";
-                badge.className = "status-badge status-open";
-            } else {
-                badge.textContent = "● CERRADO AHORA";
-                badge.className = "status-badge status-closed";
-            }
-        }
-
-        // 2. Filtro de búsqueda de servicios y productos
-        function filterServices() {
-            const input = document.getElementById('searchInput').value.toLowerCase();
-            const cards = docume
+                <
