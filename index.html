@@ -124,71 +124,70 @@
             letter-spacing: 1px;
         }
 
-        /* Tarjeta de Fidelización */
-        .loyalty-card {
-            background: linear-gradient(135deg, #1f1f1f 0%, #141414 100%);
-            border: 2px dashed #c4a468;
-            border-radius: 16px;
+        /* Sección de Promociones */
+        .promo-section {
+            background: linear-gradient(135deg, #2b1f0d 0%, #1e1e1e 100%);
+            border: 2px solid #c4a468;
+            border-radius: 12px;
             padding: 25px 20px;
             margin-bottom: 35px;
+            box-shadow: 0 4px 15px rgba(196, 164, 104, 0.2);
+        }
+
+        .promo-header {
             text-align: center;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
-        }
-
-        .loyalty-title {
             color: #c4a468;
-            font-size: 1.3rem;
-            font-weight: bold;
-            margin-bottom: 5px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .loyalty-desc {
-            font-size: 0.9rem;
-            color: #ccc;
-            margin-bottom: 20px;
-        }
-
-        .stamps-grid {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            flex-wrap: wrap;
+            font-size: 1.5rem;
             margin-bottom: 15px;
-        }
-
-        .stamp {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            border: 2px solid #333;
-            background-color: #222;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            color: #555;
-            transition: all 0.3s ease;
-        }
-
-        .stamp.active {
-            border-color: #c4a468;
-            background-color: rgba(196, 164, 104, 0.2);
-            color: #c4a468;
-            box-shadow: 0 0 10px rgba(196, 164, 104, 0.4);
-        }
-
-        .stamp.free {
-            border-color: #25d366;
-            background-color: rgba(37, 211, 102, 0.2);
-            color: #25d366;
             font-weight: bold;
+            text-transform: uppercase;
         }
 
-        .loyalty-note {
-            font-size: 0.8rem;
-            color: #888;
+        .promo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+        }
+
+        .promo-box {
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .promo-tag {
+            background-color: #e63946;
+            color: white;
+            font-size: 0.75rem;
+            font-weight: bold;
+            padding: 4px 8px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .promo-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+
+        .promo-price {
+            color: #c4a468;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin: 5px 0;
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            color: #777;
+            font-size: 0.9rem;
+            margin-right: 5px;
         }
 
         h2.section-title {
@@ -471,18 +470,25 @@
             <p class="verse-ref">— Colosenses 3:23</p>
         </div>
 
-        <!-- Tarjeta de Fidelización Digital -->
-        <div class="loyalty-card">
-            <div class="loyalty-title">💳 Club VIP Stylo Tupay</div>
-            <p class="loyalty-desc">¡En tu 5° visita obtienes un <strong>Lavado o Tratamiento Gratis</strong>!</p>
-            <div class="stamps-grid">
-                <div class="stamp active">✂️</div>
-                <div class="stamp active">✂️</div>
-                <div class="stamp">3</div>
-                <div class="stamp">4</div>
-                <div class="stamp free">🎁</div>
+        <!-- Sección de Promociones Especiales -->
+        <div class="promo-section">
+            <div class="promo-header">🔥 Promociones Especiales</div>
+            <div class="promo-grid">
+                <div class="promo-box">
+                    <span class="promo-tag">Martes & Miércoles</span>
+                    <div class="promo-title">Combo Universitario</div>
+                    <p style="font-size:0.85rem; color:#aaa;">Corte de cabello + Peinado con pomada.</p>
+                    <div class="promo-price"><span class="old-price">Bs 35</span>Bs 25</div>
+                    <a href="https://wa.me/59172312883?text=Hola,%20quiero%20aprovechar%20el%20Combo%20Universitario" class="btn-pedir" style="margin-top:8px; display:inline-block;" target="_blank">Pedir Promo</a>
+                </div>
+                <div class="promo-box">
+                    <span class="promo-tag">Fin de Semana</span>
+                    <div class="promo-title">Padre e Hijo</div>
+                    <p style="font-size:0.85rem; color:#aaa;">2 Cortes de cabello completos.</p>
+                    <div class="promo-price"><span class="old-price">Bs 70</span>Bs 55</div>
+                    <a href="https://wa.me/59172312883?text=Hola,%20quiero%20aprovechar%20la%20Promo%20Padre%20e%20Hijo" class="btn-pedir" style="margin-top:8px; display:inline-block;" target="_blank">Pedir Promo</a>
+                </div>
             </div>
-            <p class="loyalty-note">* Solicita tu sello digital en caja en cada corte de cabello.</p>
         </div>
 
         <!-- Sección de Reservas -->
@@ -545,7 +551,7 @@
         <div class="menu-grid" id="productsGrid">
             
             <div class="card" data-title="maquina de cortar cabello patillera trimmer clippers">
-                <img src="https://images.unsplash.com/photo-1584297091622-af8e5cb86b72?q=80&w=600&auto=format&fit=crop" alt="Máquina Trimmer Professional">
+                <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?q=80&w=600&auto=format&fit=crop" alt="Máquina Trimmer Professional">
                 <div class="card-body">
                     <div class="card-title">Máquina Trimmer Profesional</div>
                     <div class="card-desc">Patillera de alta precisión para marcados, líneas y acabados certeros.</div>
@@ -557,7 +563,7 @@
             </div>
 
             <div class="card" data-title="cera pomada moldeadora cabello fijacion gel">
-                <img src="https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?q=80&w=600&auto=format&fit=crop" alt="Cera Pomada">
+                <img src="https://images.unsplash.com/photo-1597354984706-fac992d9306f?q=80&w=600&auto=format&fit=crop" alt="Cera Pomada">
                 <div class="card-body">
                     <div class="card-title">Pomada Moldeadora Premium</div>
                     <div class="card-desc">Fijación fuerte y brillo natural a base de agua. Fácil de retirar al lavar.</div>
@@ -575,18 +581,4 @@
                     <div class="card-desc">Nutre el vello facial, suaviza la piel y elimina la resequedad.</div>
                     <div class="card-footer">
                         <span class="price">Bs 45</span>
-                        <a href="https://wa.me/59172312883?text=Hola,%20quiero%20comprar%20el%20Aceite%20de%20Barba" class="btn-pedir" target="_blank" rel="noopener noreferrer">Comprar</a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <!-- Cotizador Interactivo -->
-        <div class="calculator-section">
-            <h3>🧮 Armá tu Combo y Cotizá</h3>
-            <p style="text-align: center; color: #aaa; margin-bottom: 15px; font-size: 0.9rem;">Selecciona los servicios que deseas para calcular el precio total:</p>
-            
-            <div class="calc-item">
-                <label><input type="checkbox" value="35" data-name="Corte Clásico/Moderno" onchange="calculateTotal()"> Corte Clásico / Moderno</label>
-                <
+                        <a href="https://wa.me/59172312883?text=Ho
