@@ -15,6 +15,7 @@
         body {
             background-color: #121212;
             color: #f1f1f1;
+            padding-bottom: 70px; /* Espacio para el reproductor fijo */
         }
 
         /* Banner de Portada Principal */
@@ -442,6 +443,43 @@
             background-color: #0369a1;
         }
 
+        /* Control de Música Flotante */
+        .music-player-bar {
+            position: fixed;
+            bottom: 15px;
+            left: 15px;
+            background: rgba(20, 20, 20, 0.95);
+            border: 1px solid #c4a468;
+            border-radius: 30px;
+            padding: 8px 18px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+            z-index: 1000;
+        }
+
+        .music-btn {
+            background: #c4a468;
+            border: none;
+            color: #121212;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .music-btn:hover {
+            background: #d8b87a;
+        }
+
+        .music-info {
+            font-size: 0.8rem;
+            color: #ddd;
+        }
+
         footer {
             text-align: center;
             padding: 20px;
@@ -566,19 +604,4 @@
                 <img src="https://images.unsplash.com/photo-1597354984706-fac992d9306f?q=80&w=600&auto=format&fit=crop" alt="Cera Pomada">
                 <div class="card-body">
                     <div class="card-title">Pomada Moldeadora Premium</div>
-                    <div class="card-desc">Fijación fuerte y brillo natural a base de agua. Fácil de retirar al lavar.</div>
-                    <div class="card-footer">
-                        <span class="price">Bs 60</span>
-                        <a href="https://wa.me/59172312883?text=Hola,%20quiero%20comprar%20la%20Pomada%20Moldeadora" class="btn-pedir" target="_blank" rel="noopener noreferrer">Comprar</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card" data-title="aceite hidratante para barba crecimiento gotas">
-                <img src="https://images.unsplash.com/photo-1608248597261-e4d09447027a?q=80&w=600&auto=format&fit=crop" alt="Aceite de Barba">
-                <div class="card-body">
-                    <div class="card-title">Aceite Hidratante para Barba</div>
-                    <div class="card-desc">Nutre el vello facial, suaviza la piel y elimina la resequedad.</div>
-                    <div class="card-footer">
-                        <span class="price">Bs 45</span>
-                        <a href="https://wa.me/59172312883?text=Ho
+                    <div class="card-desc">Fijación fuerte y brillo natural a base de agua. Fácil 
