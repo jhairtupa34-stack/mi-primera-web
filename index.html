@@ -94,6 +94,36 @@
             padding: 0 20px;
         }
 
+        /* Sección de Versículo Bíblico */
+        .verse-section {
+            background: rgba(30, 30, 30, 0.6);
+            border-left: 4px solid #c4a468;
+            border-right: 1px solid #2a2a2a;
+            border-top: 1px solid #2a2a2a;
+            border-bottom: 1px solid #2a2a2a;
+            padding: 20px 25px;
+            margin-bottom: 35px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .verse-text {
+            font-style: italic;
+            font-size: 1.05rem;
+            color: #e0e0e0;
+            line-height: 1.6;
+            margin-bottom: 8px;
+        }
+
+        .verse-ref {
+            font-weight: bold;
+            color: #c4a468;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
         h2.section-title {
             text-align: center;
             color: #c4a468;
@@ -368,6 +398,12 @@
 
     <div class="container">
 
+        <!-- Versículo Bíblico Inspirador -->
+        <div class="verse-section">
+            <p class="verse-text">"Todo lo que hagáis, hacedlo de corazón, como para el Señor y no para los hombres."</p>
+            <p class="verse-ref">— Colosenses 3:23</p>
+        </div>
+
         <!-- Sección de Reservas -->
         <div class="booking-section">
             <h2>📅 RESERVA TU CITA ONLINE</h2>
@@ -527,33 +563,4 @@
         // 2. Filtro de búsqueda de servicios y productos
         function filterServices() {
             const input = document.getElementById('searchInput').value.toLowerCase();
-            const cards = document.querySelectorAll('.card');
-
-            cards.forEach(card => {
-                const title = card.getAttribute('data-title');
-                if (title && title.includes(input)) {
-                    card.style.display = "flex";
-                } else {
-                    card.style.display = "none";
-                }
-            });
-        }
-
-        // 3. Calculadora de Total
-        function calculateTotal() {
-            const checkboxes = document.querySelectorAll('.calc-item input[type="checkbox"]');
-            let total = 0;
-            let selectedServices = [];
-
-            checkboxes.forEach(cb => {
-                if (cb.checked) {
-                    total += parseInt(cb.value);
-                    selectedServices.push(cb.getAttribute('data-name'));
-                }
-            });
-
-            document.getElementById('totalAmount').textContent = `Bs ${total}`;
-
-            const waBtn = document.getElementById('waCalcBtn');
-            if (total > 0) {
-                const message = encodeURIComponent(`Hola, quiero cotizar/reservar los siguientes servicios: ${selectedServices.join(', ')}. Total estimado: 
+            const cards = docume
