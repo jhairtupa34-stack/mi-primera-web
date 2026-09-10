@@ -12,17 +12,12 @@
     --bg-primary: #0b0b0b;
     --bg-secondary: #151515;
     --bg-tertiary: #202020;
-
     --gold: #d4af67;
     --gold-light: #f0d28c;
-
     --text: #f5f5f5;
     --muted: #aaa;
-
     --border: rgba(212,175,103,.25);
-
     --whatsapp: #25d366;
-
     --shadow: 0 15px 40px rgba(0,0,0,.45);
 }
 
@@ -30,15 +25,11 @@
     --bg-primary: #f4f4f4;
     --bg-secondary: #ffffff;
     --bg-tertiary: #eeeeee;
-
     --gold: #a57b32;
     --gold-light: #c99b4c;
-
     --text: #181818;
     --muted: #666;
-
     --border: rgba(0,0,0,.12);
-
     --shadow: 0 10px 30px rgba(0,0,0,.12);
 }
 
@@ -91,7 +82,7 @@ a,
     background:
         linear-gradient(
             rgba(0,0,0,.58),
-            rgba(0,0,0,.85)
+            rgba(0,0,0,.86)
         ),
         url("https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=1800&q=90");
 
@@ -117,7 +108,7 @@ a,
 .hero-content {
     position: relative;
     z-index: 2;
-    max-width: 800px;
+    max-width: 850px;
 }
 
 .logo-small {
@@ -149,13 +140,15 @@ a,
     color: #ddd;
     max-width: 600px;
     margin: 20px auto;
-    font-size: 1rem;
 }
 
 .status {
     display: inline-block;
+
     padding: 8px 18px;
+
     border-radius: 30px;
+
     margin: 10px 0 25px;
 
     font-size: .85rem;
@@ -163,6 +156,7 @@ a,
 
     border: 1px solid var(--whatsapp);
     color: var(--whatsapp);
+
     background: rgba(37,211,102,.1);
 }
 
@@ -175,10 +169,12 @@ a,
 
 .btn {
     display: inline-flex;
+
     justify-content: center;
     align-items: center;
 
     padding: 14px 25px;
+
     border-radius: 30px;
 
     font-weight: bold;
@@ -206,11 +202,12 @@ a,
 
 
 /* =========================
-   THEME BUTTON
+   TEMA
 ========================= */
 
 .theme-button {
     position: absolute;
+
     z-index: 10;
 
     top: 20px;
@@ -219,9 +216,11 @@ a,
     padding: 9px 15px;
 
     background: rgba(0,0,0,.55);
+
     color: white;
 
     border: 1px solid var(--gold);
+
     border-radius: 30px;
 
     cursor: pointer;
@@ -229,7 +228,7 @@ a,
 
 
 /* =========================
-   NAV
+   NAVEGACIÓN
 ========================= */
 
 .quick-nav {
@@ -251,6 +250,7 @@ a,
     padding: 8px 15px;
 
     border: 1px solid rgba(255,255,255,.25);
+
     background: rgba(0,0,0,.4);
 
     border-radius: 20px;
@@ -265,7 +265,7 @@ a,
 
 
 /* =========================
-   CONTAINER
+   CONTENEDOR
 ========================= */
 
 .container {
@@ -275,7 +275,7 @@ a,
 
 
 /* =========================
-   VERSE
+   VERSÍCULO
 ========================= */
 
 .verse {
@@ -296,18 +296,19 @@ a,
 
 .verse p:first-child {
     font-style: italic;
-    font-size: 1.05rem;
 }
 
 .verse strong {
     display: block;
+
     margin-top: 8px;
+
     color: var(--gold);
 }
 
 
 /* =========================
-   SECTION TITLE
+   TÍTULOS
 ========================= */
 
 .section-title {
@@ -320,6 +321,7 @@ a,
     margin: 60px 0 25px;
 
     text-transform: uppercase;
+
     letter-spacing: 2px;
 }
 
@@ -338,7 +340,7 @@ a,
 
 
 /* =========================
-   PROMOS
+   PROMOCIONES
 ========================= */
 
 .promo-section {
@@ -359,7 +361,9 @@ a,
 
 .promo-title {
     text-align: center;
+
     color: var(--gold-light);
+
     font-size: 1.5rem;
 }
 
@@ -388,6 +392,7 @@ a,
 
 .promo-box:hover {
     transform: translateY(-5px);
+
     border-color: var(--gold);
 }
 
@@ -397,7 +402,9 @@ a,
 
 .promo-price {
     color: var(--gold-light);
+
     font-size: 1.5rem;
+
     font-weight: bold;
 
     margin: 12px;
@@ -405,7 +412,7 @@ a,
 
 
 /* =========================
-   BOOKING
+   RESERVA
 ========================= */
 
 .booking {
@@ -414,11 +421,12 @@ a,
     background:
         linear-gradient(
             rgba(0,0,0,.75),
-            rgba(0,0,0,.85)
+            rgba(0,0,0,.88)
         ),
         url("https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1500&q=85");
 
     background-size: cover;
+
     background-position: center;
 
     padding: 45px 20px;
@@ -434,17 +442,19 @@ a,
 
 .booking h2 {
     color: var(--gold-light);
+
     margin-bottom: 10px;
 }
 
 .booking p {
     color: #ddd;
+
     margin-bottom: 20px;
 }
 
 
 /* =========================
-   SEARCH
+   BUSCADOR
 ========================= */
 
 .search {
@@ -463,6 +473,8 @@ a,
     font-size: 1rem;
 
     outline: none;
+
+    margin-bottom: 25px;
 }
 
 .search:focus {
@@ -471,7 +483,7 @@ a,
 
 
 /* =========================
-   CARDS
+   GRID
 ========================= */
 
 .grid {
@@ -483,6 +495,11 @@ a,
     gap: 20px;
 }
 
+
+/* =========================
+   TARJETAS CON IMAGEN
+========================= */
+
 .card {
     background: var(--bg-secondary);
 
@@ -490,24 +507,78 @@ a,
 
     border-radius: 15px;
 
-    padding: 22px;
+    overflow: hidden;
 
     box-shadow: var(--shadow);
 
     display: flex;
+
     flex-direction: column;
 
     justify-content: space-between;
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-6px);
+
     border-color: var(--gold);
+
+    box-shadow:
+        0 18px 45px rgba(0,0,0,.6);
+}
+
+
+/* IMAGEN */
+
+.card-image {
+    width: 100%;
+
+    height: 210px;
+
+    overflow: hidden;
+
+    position: relative;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform .6s ease;
+}
+
+.card:hover .card-image img {
+    transform: scale(1.08);
+}
+
+.card-image::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background: linear-gradient(
+        transparent 55%,
+        rgba(0,0,0,.55)
+    );
+}
+
+
+/* CONTENIDO */
+
+.card-content {
+    padding: 22px;
 }
 
 .card-icon {
-    font-size: 2rem;
-    margin-bottom: 10px;
+    font-size: 1.5rem;
+
+    margin-bottom: 5px;
 }
 
 .card h3 {
@@ -558,7 +629,7 @@ a,
 
 
 /* =========================
-   CALCULATOR
+   CALCULADORA
 ========================= */
 
 .calculator {
@@ -665,7 +736,7 @@ a,
 
 
 /* =========================
-   LOCATION
+   UBICACIÓN
 ========================= */
 
 .location {
@@ -686,12 +757,13 @@ a,
 
 .location p {
     color: var(--muted);
+
     margin: 8px 0;
 }
 
 
 /* =========================
-   MUSIC PLAYER
+   MÚSICA
 ========================= */
 
 .music-player {
@@ -701,7 +773,7 @@ a,
     right: 15px;
     bottom: 15px;
 
-    max-width: 500px;
+    max-width: 520px;
 
     margin: auto;
 
@@ -715,7 +787,7 @@ a,
 
     padding: 10px 14px;
 
-    background: rgba(20,20,20,.95);
+    background: rgba(20,20,20,.97);
 
     border: 1px solid var(--gold);
 
@@ -747,19 +819,22 @@ a,
 
     min-width: 0;
 
-    font-size: .75rem;
-
     color: #ccc;
+
+    font-size: .75rem;
 }
 
 .music-file input {
     width: 100%;
+
     font-size: .7rem;
+
+    color: #ccc;
 }
 
 
 /* =========================
-   WHATSAPP FLOAT
+   WHATSAPP
 ========================= */
 
 .whatsapp-float {
@@ -785,7 +860,8 @@ a,
 
     font-size: 1.7rem;
 
-    box-shadow: 0 5px 20px rgba(37,211,102,.45);
+    box-shadow:
+        0 5px 20px rgba(37,211,102,.45);
 
     z-index: 999;
 }
@@ -817,13 +893,14 @@ footer strong {
 
 
 /* =========================
-   MOBILE
+   MÓVIL
 ========================= */
 
 @media(max-width:600px) {
 
     .hero {
         min-height: 620px;
+
         background-attachment: scroll;
     }
 
@@ -845,8 +922,13 @@ footer strong {
         padding: 20px;
     }
 
+    .card-image {
+        height: 190px;
+    }
+
     .music-player {
         bottom: 10px;
+
         padding: 8px;
     }
 
@@ -873,60 +955,86 @@ footer strong {
 <header class="hero">
 
 <button class="theme-button" onclick="toggleTheme()">
-    <span id="themeIcon">☀️</span>
-    <span id="themeText">Modo claro</span>
+
+<span id="themeIcon">☀️</span>
+
+<span id="themeText">Modo claro</span>
+
 </button>
+
 
 <div class="hero-content">
 
-    <div class="logo-small">
-        Peluquería & Barbería
-    </div>
+<div class="logo-small">
+Peluquería & Barbería
+</div>
 
-    <h1>STYLO TUPAY</h1>
 
-    <h2>Profesional • Estilo • Imagen</h2>
+<h1>
+STYLO TUPAY
+</h1>
 
-    <p class="hero-description">
-        Dale a tu imagen el estilo que merece.
-        Cortes modernos, barbería y atención profesional.
-    </p>
 
-    <div id="statusBadge" class="status">
-        ● Verificando horario...
-    </div>
+<h2>
+Profesional • Estilo • Imagen
+</h2>
 
-    <div class="hero-buttons">
 
-        <a
-        class="btn btn-whatsapp"
-        href="https://wa.me/59172312883?text=Hola%20STYLO%20TUPAY,%20quiero%20consultar%20sobre%20un%20servicio"
-        target="_blank">
-        💬 WhatsApp
-        </a>
+<p class="hero-description">
 
-        <a
-        class="btn btn-gold"
-        href="https://calendly.com/jhairtupa34/30min"
-        target="_blank">
-        📅 Reservar cita
-        </a>
+Dale a tu imagen el estilo que merece.
+Cortes modernos, barbería y atención profesional.
 
-    </div>
+</p>
 
-    <nav class="quick-nav">
 
-        <a href="#promos">🔥 Promos</a>
-        <a href="#servicios">✂️ Servicios</a>
-        <a href="#productos">💈 Productos</a>
-        <a href="#cotizador">🧮 Cotizar</a>
-        <a href="#faq">❓ FAQ</a>
+<div id="statusBadge" class="status">
+● Verificando horario...
+</div>
 
-    </nav>
+
+<div class="hero-buttons">
+
+<a
+class="btn btn-whatsapp"
+href="https://wa.me/59172312883?text=Hola%20STYLO%20TUPAY,%20quiero%20consultar%20sobre%20un%20servicio"
+target="_blank">
+
+💬 WhatsApp
+
+</a>
+
+
+<a
+class="btn btn-gold"
+href="https://calendly.com/jhairtupa34/30min"
+target="_blank">
+
+📅 Reservar cita
+
+</a>
+
+</div>
+
+
+<nav class="quick-nav">
+
+<a href="#promos">🔥 Promos</a>
+
+<a href="#servicios">✂️ Servicios</a>
+
+<a href="#productos">💈 Productos</a>
+
+<a href="#cotizador">🧮 Cotizar</a>
+
+<a href="#faq">❓ FAQ</a>
+
+</nav>
 
 </div>
 
 </header>
+
 
 
 <main class="container">
@@ -939,13 +1047,18 @@ footer strong {
 <section class="verse">
 
 <p>
+
 "Todo lo que hagáis, hacedlo de corazón,
 como para el Señor y no para los hombres."
+
 </p>
 
-<strong>— Colosenses 3:23</strong>
+<strong>
+— Colosenses 3:23
+</strong>
 
 </section>
+
 
 
 <!-- =========================
@@ -958,11 +1071,15 @@ como para el Señor y no para los hombres."
 🔥 PROMOCIONES ESPECIALES
 </h2>
 
+
 <div class="promo-grid">
+
 
 <div class="promo-box">
 
-<h3>🎓 Combo Universitario</h3>
+<h3>
+🎓 Combo Universitario
+</h3>
 
 <p>
 Corte de cabello + peinado con pomada.
@@ -976,15 +1093,20 @@ Bs 25
 class="btn btn-gold"
 href="https://wa.me/59172312883?text=Hola,%20quiero%20aprovechar%20el%20Combo%20Universitario"
 target="_blank">
+
 Pedir promo
+
 </a>
 
 </div>
 
 
+
 <div class="promo-box">
 
-<h3>👨‍👦 Padre e Hijo</h3>
+<h3>
+👨‍👦 Padre e Hijo
+</h3>
 
 <p>
 2 cortes de cabello completos.
@@ -998,14 +1120,18 @@ Bs 55
 class="btn btn-gold"
 href="https://wa.me/59172312883?text=Hola,%20quiero%20aprovechar%20la%20Promo%20Padre%20e%20Hijo"
 target="_blank">
+
 Pedir promo
+
 </a>
 
 </div>
 
+
 </div>
 
 </section>
+
 
 
 <!-- =========================
@@ -1014,7 +1140,9 @@ Pedir promo
 
 <section class="booking">
 
-<h2>📅 RESERVA TU CITA</h2>
+<h2>
+📅 RESERVA TU CITA
+</h2>
 
 <p>
 Elige tu horario y asegura tu atención sin esperar.
@@ -1032,41 +1160,62 @@ target="_blank">
 </section>
 
 
+
 <!-- =========================
      SERVICIOS
 ========================= -->
 
 <h2 id="servicios" class="section-title">
+
 Nuestros Servicios
+
 </h2>
+
 
 <input
 type="text"
 id="searchInput"
 class="search"
 placeholder="🔍 Buscar un servicio..."
-onkeyup="filterServices()">
+onkeyup="filterServices()"
+>
 
 
 <div class="grid" id="servicesGrid">
 
 
-<div class="card" data-title="corte clasico moderno fade degradado">
+<!-- CORTE -->
 
-<div>
+<div
+class="card"
+data-title="corte clasico moderno fade degradado">
 
-<div class="card-icon">✂️</div>
+<div class="card-image">
+
+<img
+src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=900&q=85"
+alt="Corte de cabello masculino">
+
+</div>
+
+
+<div class="card-content">
+
+<div class="card-icon">
+✂️
+</div>
 
 <h3>
 Corte Clásico / Moderno
 </h3>
 
 <p>
+
 Lavado, corte al estilo deseado,
 perfilado con navaja y peinado final.
+
 </p>
 
-</div>
 
 <div class="card-bottom">
 
@@ -1074,35 +1223,56 @@ perfilado con navaja y peinado final.
 Bs 35
 </span>
 
+
 <a
 class="small-btn"
 href="https://wa.me/59172312883?text=Hola,%20quiero%20reservar%20un%20Corte"
 target="_blank">
+
 Reservar
+
 </a>
 
 </div>
 
 </div>
 
+</div>
 
 
-<div class="card" data-title="barba perfilado afeitado">
 
-<div>
+<!-- BARBA -->
 
-<div class="card-icon">🧔</div>
+<div
+class="card"
+data-title="barba perfilado afeitado">
+
+<div class="card-image">
+
+<img
+src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=900&q=85"
+alt="Perfilado de barba">
+
+</div>
+
+
+<div class="card-content">
+
+<div class="card-icon">
+🧔
+</div>
 
 <h3>
 Perfilado de Barba
 </h3>
 
 <p>
+
 Arreglo y perfilado de barba
 con acabado profesional.
+
 </p>
 
-</div>
 
 <div class="card-bottom">
 
@@ -1110,35 +1280,56 @@ con acabado profesional.
 Bs 25
 </span>
 
+
 <a
 class="small-btn"
 href="https://wa.me/59172312883?text=Hola,%20quiero%20reservar%20un%20Perfilado%20de%20Barba"
 target="_blank">
+
 Reservar
+
 </a>
 
 </div>
 
 </div>
 
+</div>
 
 
-<div class="card" data-title="combo vip corte barba">
 
-<div>
+<!-- COMBO -->
 
-<div class="card-icon">🔥</div>
+<div
+class="card"
+data-title="combo vip corte barba">
+
+<div class="card-image">
+
+<img
+src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=900&q=85"
+alt="Barbería profesional">
+
+</div>
+
+
+<div class="card-content">
+
+<div class="card-icon">
+🔥
+</div>
 
 <h3>
 Combo VIP
 </h3>
 
 <p>
+
 Corte de cabello profesional
 + arreglo completo de barba.
+
 </p>
 
-</div>
 
 <div class="card-bottom">
 
@@ -1146,11 +1337,14 @@ Corte de cabello profesional
 Bs 55
 </span>
 
+
 <a
 class="small-btn"
 href="https://wa.me/59172312883?text=Hola,%20quiero%20reservar%20el%20Combo%20VIP"
 target="_blank">
+
 Reservar
+
 </a>
 
 </div>
@@ -1160,33 +1354,54 @@ Reservar
 </div>
 
 
+</div>
+
+
+
 <!-- =========================
-     PRODUCTOS
+     TIENDA
 ========================= -->
 
 <h2 id="productos" class="section-title">
+
 💈 Tienda de Productos
+
 </h2>
+
 
 <div class="grid">
 
 
+<!-- TRIMMER -->
+
 <div class="card">
 
-<div>
+<div class="card-image">
 
-<div class="card-icon">⚡</div>
+<img
+src="https://images.unsplash.com/photo-1621607512214-68297480165e?auto=format&fit=crop&w=900&q=85"
+alt="Máquina trimmer profesional">
+
+</div>
+
+
+<div class="card-content">
+
+<div class="card-icon">
+⚡
+</div>
 
 <h3>
 Trimmer Profesional
 </h3>
 
 <p>
+
 Patillera de alta precisión
 para marcados y líneas.
+
 </p>
 
-</div>
 
 <div class="card-bottom">
 
@@ -1194,35 +1409,54 @@ para marcados y líneas.
 Bs 220
 </span>
 
+
 <a
 class="small-btn"
 href="https://wa.me/59172312883?text=Hola,%20quiero%20comprar%20la%20Trimmer"
 target="_blank">
+
 Comprar
+
 </a>
 
 </div>
 
 </div>
 
+</div>
 
+
+
+<!-- POMADA -->
 
 <div class="card">
 
-<div>
+<div class="card-image">
 
-<div class="card-icon">✨</div>
+<img
+src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=900&q=85"
+alt="Producto para cabello">
+
+</div>
+
+
+<div class="card-content">
+
+<div class="card-icon">
+✨
+</div>
 
 <h3>
 Pomada Moldeadora
 </h3>
 
 <p>
+
 Fijación fuerte y brillo natural
 a base de agua.
+
 </p>
 
-</div>
 
 <div class="card-bottom">
 
@@ -1230,11 +1464,14 @@ a base de agua.
 Bs 60
 </span>
 
+
 <a
 class="small-btn"
 href="https://wa.me/59172312883?text=Hola,%20quiero%20comprar%20la%20Pomada"
 target="_blank">
+
 Comprar
+
 </a>
 
 </div>
@@ -1244,19 +1481,28 @@ Comprar
 </div>
 
 
+</div>
+
+
+
 <!-- =========================
      COTIZADOR
 ========================= -->
 
 <h2 id="cotizador" class="section-title">
+
 🧮 Cotiza tu Combo
+
 </h2>
 
+
 <section class="calculator">
+
 
 <div class="calc-item">
 
 <label>
+
 <input
 type="checkbox"
 value="35"
@@ -1264,16 +1510,21 @@ data-name="Corte Clásico / Moderno"
 onchange="calculateTotal()">
 
 Corte Clásico / Moderno
+
 </label>
 
-<strong>Bs 35</strong>
+<strong>
+Bs 35
+</strong>
 
 </div>
+
 
 
 <div class="calc-item">
 
 <label>
+
 <input
 type="checkbox"
 value="25"
@@ -1281,16 +1532,21 @@ data-name="Perfilado de Barba"
 onchange="calculateTotal()">
 
 Perfilado de Barba
+
 </label>
 
-<strong>Bs 25</strong>
+<strong>
+Bs 25
+</strong>
 
 </div>
+
 
 
 <div class="calc-item">
 
 <label>
+
 <input
 type="checkbox"
 value="20"
@@ -1298,11 +1554,15 @@ data-name="Peinado"
 onchange="calculateTotal()">
 
 Peinado
+
 </label>
 
-<strong>Bs 20</strong>
+<strong>
+Bs 20
+</strong>
 
 </div>
+
 
 
 <div class="total">
@@ -1321,128 +1581,4 @@ id="waCalcBtn"
 class="btn btn-whatsapp"
 href="#"
 target="_blank"
-style="display:none;width:100%;">
-
-💬 Pedir este paquete por WhatsApp
-
-</a>
-
-</section>
-
-
-<!-- =========================
-     FAQ
-========================= -->
-
-<h2 id="faq" class="section-title">
-❓ Preguntas Frecuentes
-</h2>
-
-
-<div class="faq">
-
-<button class="faq-question" onclick="toggleFaq(this)">
-¿Es necesario reservar cita?
-<span>▼</span>
-</button>
-
-<div class="faq-answer">
-
-Atendemos por orden de llegada,
-pero recomendamos reservar por
-Calendly o WhatsApp para evitar esperas.
-
-</div>
-
-</div>
-
-
-
-<div class="faq">
-
-<button class="faq-question" onclick="toggleFaq(this)">
-¿Qué medios de pago aceptan?
-<span>▼</span>
-</button>
-
-<div class="faq-answer">
-
-Puedes consultar los medios de pago
-disponibles directamente por WhatsApp.
-
-</div>
-
-</div>
-
-
-
-<div class="faq">
-
-<button class="faq-question" onclick="toggleFaq(this)">
-¿Dónde se encuentra STYLO TUPAY?
-<span>▼</span>
-</button>
-
-<div class="faq-answer">
-
-Estamos en la ciudad de Oruro,
-zona norte, avenida Tomás Barrón
-entre la calle 11.
-
-</div>
-
-</div>
-
-
-<!-- =========================
-     UBICACIÓN
-========================= -->
-
-<section class="location">
-
-<h2>
-📍 Encuéntranos
-</h2>
-
-<p>
-<strong>Ciudad:</strong> Oruro
-</p>
-
-<p>
-<strong>Zona:</strong> Norte
-</p>
-
-<p>
-<strong>Dirección:</strong>
-Avenida Tomás Barrón entre la calle 11
-</p>
-
-<p>
-<strong>Horario:</strong>
-08:30 a 22:30
-</p>
-
-<br>
-
-<a
-class="btn btn-gold"
-href="https://www.google.com/maps/search/?api=1&query=Avenida+Tomas+Barron+Calle+11+Oruro+Bolivia"
-target="_blank">
-
-🗺️ Ver ubicación
-
-</a>
-
-</section>
-
-
-</main>
-
-
-<!-- =========================
-     WHATSAPP FLOTANTE
-========================= -->
-
-<a
-class="whatsapp-float"
-href="https://wa.me/59172312883?te
+style="display:non
