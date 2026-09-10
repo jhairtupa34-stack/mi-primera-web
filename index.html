@@ -1,537 +1,1448 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stylo Tupay | Peluquería & Barbería Profesional</title>
-    <style>
-        :root {
-            --bg-primary: #121212;
-            --bg-secondary: #1e1e1e;
-            --bg-tertiary: #2a2a2a;
-            --accent-gold: #c4a468;
-            --accent-gold-hover: #d8b87a;
-            --text-main: #f1f1f1;
-            --text-muted: #aaaaaa;
-            --text-dark: #121212;
-            --border-color: #333333;
-            --whatsapp-color: #25d366;
-            --whatsapp-hover: #20ba5a;
-            --card-shadow: rgba(0, 0, 0, 0.5);
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        [data-theme="light"] {
-            --bg-primary: #f4f4f5;
-            --bg-secondary: #ffffff;
-            --bg-tertiary: #e4e4e7;
-            --accent-gold: #b38e46;
-            --accent-gold-hover: #967433;
-            --text-main: #18181b;
-            --text-muted: #52525b;
-            --text-dark: #ffffff;
-            --border-color: #d4d4d8;
-            --card-shadow: rgba(0, 0, 0, 0.1);
-        }
+<title>STYLO TUPAY | Peluquería & Barbería</title>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-        }
+<style>
 
-        html {
-            scroll-behavior: smooth;
-        }
+:root {
+    --bg-primary: #0b0b0b;
+    --bg-secondary: #151515;
+    --bg-tertiary: #202020;
 
-        body {
-            background-color: var(--bg-primary);
-            color: var(--text-main);
-            padding-bottom: 100px;
-            line-height: 1.6;
-        }
+    --gold: #d4af67;
+    --gold-light: #f0d28c;
 
-        .container {
-            max-width: 900px;
-            margin: 30px auto;
-            padding: 0 20px;
-        }
+    --text: #f5f5f5;
+    --muted: #aaa;
 
-        h2.section-title {
-            text-align: center;
-            color: var(--accent-gold);
-            margin-bottom: 25px;
-            margin-top: 50px;
-            font-size: 1.8rem;
-            border-bottom: 2px solid var(--accent-gold);
-            display: inline-block;
-            width: 100%;
-            padding-bottom: 8px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+    --border: rgba(212,175,103,.25);
 
-        /* BANNER Y ENCABEZADO */
-        .hero-banner {
-            position: relative;
-            width: 100%;
-            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.85)), #1a1a1a;
-            text-align: center;
-            padding: 60px 20px 40px;
-            border-bottom: 3px solid var(--accent-gold);
-            box-shadow: 0 4px 20px var(--card-shadow);
-        }
+    --whatsapp: #25d366;
 
-        .hero-title {
-            font-size: 3rem;
-            color: var(--accent-gold);
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            margin-bottom: 5px;
-        }
+    --shadow: 0 15px 40px rgba(0,0,0,.45);
+}
 
-        .hero-subtitle {
-            font-size: 1.1rem;
-            color: var(--text-main);
-            letter-spacing: 2px;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-        }
+[data-theme="light"] {
+    --bg-primary: #f4f4f4;
+    --bg-secondary: #ffffff;
+    --bg-tertiary: #eeeeee;
 
-        .status-badge {
-            display: inline-block;
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: bold;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-        }
+    --gold: #a57b32;
+    --gold-light: #c99b4c;
 
-        .status-open {
-            background-color: rgba(37, 211, 102, 0.2);
-            color: #25d366;
-            border: 1px solid #25d366;
-        }
+    --text: #181818;
+    --muted: #666;
 
-        .status-closed {
-            background-color: rgba(255, 77, 77, 0.2);
-            color: #ff4d4d;
-            border: 1px solid #ff4d4d;
-        }
+    --border: rgba(0,0,0,.12);
 
-        .btn-whatsapp {
-            display: inline-block;
-            background-color: var(--whatsapp-color);
-            color: #ffffff;
-            padding: 14px 28px;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 30px;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
-        }
+    --shadow: 0 10px 30px rgba(0,0,0,.12);
+}
 
-        .theme-toggle-container {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        .theme-btn {
-            background-color: var(--bg-secondary);
-            color: var(--text-main);
-            border: 1px solid var(--accent-gold);
-            padding: 8px 14px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-size: 0.85rem;
-            font-weight: bold;
-        }
+html {
+    scroll-behavior: smooth;
+}
 
-        /* NAVEGACIÓN RÁPIDA */
-        .quick-nav {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
+body {
+    background: var(--bg-primary);
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    padding-bottom: 90px;
+}
 
-        .quick-nav-btn {
-            background-color: var(--bg-secondary);
-            color: var(--text-main);
-            border: 1px solid var(--border-color);
-            padding: 6px 14px;
-            border-radius: 15px;
-            text-decoration: none;
-            font-size: 0.85rem;
-        }
+a {
+    text-decoration: none;
+}
 
-        /* VERSÍCULO Y PROMOS */
-        .verse-section {
-            background: var(--bg-secondary);
-            border-left: 4px solid var(--accent-gold);
-            padding: 20px;
-            margin-bottom: 30px;
-            border-radius: 8px;
-            text-align: center;
-        }
+button,
+a,
+.card,
+.promo-box {
+    transition: .3s ease;
+}
 
-        .promo-section {
-            background: var(--bg-secondary);
-            border: 2px solid var(--accent-gold);
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 30px;
-        }
 
-        .promo-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 15px;
-            margin-top: 15px;
-        }
+/* =========================
+   HERO
+========================= */
 
-        .promo-box {
-            background: var(--bg-tertiary);
-            padding: 15px;
-            border-radius: 8px;
-            text-align: center;
-        }
+.hero {
+    min-height: 650px;
+    position: relative;
 
-        /* RESERVAS Y TARJETAS */
-        .booking-section {
-            background: var(--bg-secondary);
-            padding: 30px;
-            text-align: center;
-            border-radius: 16px;
-            margin-bottom: 30px;
-            border: 2px solid var(--accent-gold);
-        }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-        .btn-calendly {
-            display: inline-block;
-            background: var(--accent-gold);
-            color: var(--text-dark);
-            padding: 14px 28px;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 30px;
-            margin-top: 15px;
-        }
+    text-align: center;
+    padding: 90px 20px 50px;
 
-        .search-box {
-            width: 100%;
-            padding: 14px;
-            background-color: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            border-radius: 10px;
-            color: var(--text-main);
-            margin-bottom: 25px;
-        }
+    background:
+        linear-gradient(
+            rgba(0,0,0,.58),
+            rgba(0,0,0,.85)
+        ),
+        url("https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=1800&q=90");
 
-        .menu-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
+    background-size: cover;
+    background-position: center;
+}
 
-        .card {
-            background: var(--bg-secondary);
-            border-radius: 12px;
-            padding: 20px;
-            border: 1px solid var(--border-color);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
+.hero::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
 
-        .card-title {
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: var(--text-main);
-        }
+    width: 100%;
+    height: 120px;
 
-        .card-desc {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            margin: 10px 0;
-        }
+    background: linear-gradient(
+        transparent,
+        var(--bg-primary)
+    );
+}
 
-        .price {
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: var(--accent-gold);
-        }
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+}
 
-        .btn-pedir {
-            background-color: var(--accent-gold);
-            color: var(--text-dark);
-            text-decoration: none;
-            padding: 8px 15px;
-            border-radius: 6px;
-            font-weight: bold;
-            display: inline-block;
-        }
+.logo-small {
+    color: var(--gold-light);
+    font-size: 15px;
+    letter-spacing: 5px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
 
-        /* COTIZADOR */
-        .calculator-section {
-            background-color: var(--bg-secondary);
-            padding: 25px;
-            border-radius: 12px;
-            margin-top: 40px;
-            border: 1px solid var(--border-color);
-        }
+.hero h1 {
+    font-size: clamp(3rem, 10vw, 6rem);
+    letter-spacing: 8px;
+    color: var(--gold-light);
+    font-weight: 800;
 
-        .calc-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 10px 0;
-            border-bottom: 1px solid var(--border-color);
-        }
+    text-shadow:
+        0 4px 20px rgba(0,0,0,.8);
+}
 
-        .total-box {
-            margin-top: 20px;
-            text-align: center;
-            font-size: 1.3rem;
-            font-weight: bold;
-        }
+.hero h2 {
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-top: 5px;
+}
 
-        /* PREGUNTAS FRECUENTES */
-        .faq-item {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            margin-bottom: 10px;
-        }
+.hero-description {
+    color: #ddd;
+    max-width: 600px;
+    margin: 20px auto;
+    font-size: 1rem;
+}
 
-        .faq-header {
-            padding: 15px;
-            cursor: pointer;
-            font-weight: bold;
-            display: flex;
-            justify-content: space-between;
-        }
+.status {
+    display: inline-block;
+    padding: 8px 18px;
+    border-radius: 30px;
+    margin: 10px 0 25px;
 
-        .faq-content {
-            padding: 15px;
-            display: none;
-            color: var(--text-muted);
-            border-top: 1px solid var(--border-color);
-        }
+    font-size: .85rem;
+    font-weight: bold;
 
-        /* REPRODUCTOR FLOTANTE */
-        .music-player-bar {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            background: var(--bg-secondary);
-            border: 2px solid var(--accent-gold);
-            border-radius: 30px;
-            padding: 10px 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            box-shadow: 0 6px 20px var(--card-shadow);
-            z-index: 9999;
-        }
+    border: 1px solid var(--whatsapp);
+    color: var(--whatsapp);
+    background: rgba(37,211,102,.1);
+}
 
-        .music-btn {
-            background: var(--accent-gold);
-            border: none;
-            color: var(--text-dark);
-            padding: 8px 14px;
-            border-radius: 20px;
-            font-weight: bold;
-            cursor: pointer;
-        }
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #0a0a0a;
-            color: #666;
-            font-size: 0.8rem;
-            margin-top: 40px;
-        }
-    </style>
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 14px 25px;
+    border-radius: 30px;
+
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-gold {
+    background: var(--gold);
+    color: #111;
+}
+
+.btn-gold:hover {
+    background: var(--gold-light);
+    transform: translateY(-3px);
+}
+
+.btn-whatsapp {
+    background: var(--whatsapp);
+    color: white;
+}
+
+.btn-whatsapp:hover {
+    transform: translateY(-3px);
+}
+
+
+/* =========================
+   THEME BUTTON
+========================= */
+
+.theme-button {
+    position: absolute;
+    z-index: 10;
+
+    top: 20px;
+    right: 20px;
+
+    padding: 9px 15px;
+
+    background: rgba(0,0,0,.55);
+    color: white;
+
+    border: 1px solid var(--gold);
+    border-radius: 30px;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   NAV
+========================= */
+
+.quick-nav {
+    position: relative;
+    z-index: 5;
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-top: 35px;
+}
+
+.quick-nav a {
+    color: white;
+
+    padding: 8px 15px;
+
+    border: 1px solid rgba(255,255,255,.25);
+    background: rgba(0,0,0,.4);
+
+    border-radius: 20px;
+
+    font-size: .85rem;
+}
+
+.quick-nav a:hover {
+    border-color: var(--gold);
+    color: var(--gold-light);
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container {
+    width: min(1100px, 92%);
+    margin: auto;
+}
+
+
+/* =========================
+   VERSE
+========================= */
+
+.verse {
+    background: var(--bg-secondary);
+
+    border-left: 4px solid var(--gold);
+
+    padding: 25px;
+
+    margin: 20px 0 35px;
+
+    border-radius: 12px;
+
+    text-align: center;
+
+    box-shadow: var(--shadow);
+}
+
+.verse p:first-child {
+    font-style: italic;
+    font-size: 1.05rem;
+}
+
+.verse strong {
+    display: block;
+    margin-top: 8px;
+    color: var(--gold);
+}
+
+
+/* =========================
+   SECTION TITLE
+========================= */
+
+.section-title {
+    text-align: center;
+
+    color: var(--gold-light);
+
+    font-size: 1.8rem;
+
+    margin: 60px 0 25px;
+
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.section-title::after {
+    content: "";
+
+    display: block;
+
+    width: 80px;
+    height: 3px;
+
+    background: var(--gold);
+
+    margin: 10px auto;
+}
+
+
+/* =========================
+   PROMOS
+========================= */
+
+.promo-section {
+    background: linear-gradient(
+        135deg,
+        var(--bg-secondary),
+        var(--bg-tertiary)
+    );
+
+    border: 1px solid var(--gold);
+
+    border-radius: 18px;
+
+    padding: 30px;
+
+    box-shadow: var(--shadow);
+}
+
+.promo-title {
+    text-align: center;
+    color: var(--gold-light);
+    font-size: 1.5rem;
+}
+
+.promo-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(240px, 1fr));
+
+    gap: 18px;
+
+    margin-top: 25px;
+}
+
+.promo-box {
+    padding: 22px;
+
+    background: rgba(255,255,255,.04);
+
+    border-radius: 14px;
+
+    text-align: center;
+
+    border: 1px solid var(--border);
+}
+
+.promo-box:hover {
+    transform: translateY(-5px);
+    border-color: var(--gold);
+}
+
+.promo-box h3 {
+    margin-bottom: 8px;
+}
+
+.promo-price {
+    color: var(--gold-light);
+    font-size: 1.5rem;
+    font-weight: bold;
+
+    margin: 12px;
+}
+
+
+/* =========================
+   BOOKING
+========================= */
+
+.booking {
+    text-align: center;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,.75),
+            rgba(0,0,0,.85)
+        ),
+        url("https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1500&q=85");
+
+    background-size: cover;
+    background-position: center;
+
+    padding: 45px 20px;
+
+    border-radius: 18px;
+
+    margin-top: 35px;
+
+    border: 1px solid var(--gold);
+
+    box-shadow: var(--shadow);
+}
+
+.booking h2 {
+    color: var(--gold-light);
+    margin-bottom: 10px;
+}
+
+.booking p {
+    color: #ddd;
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   SEARCH
+========================= */
+
+.search {
+    width: 100%;
+
+    padding: 15px 18px;
+
+    border-radius: 12px;
+
+    border: 1px solid var(--border);
+
+    background: var(--bg-secondary);
+
+    color: var(--text);
+
+    font-size: 1rem;
+
+    outline: none;
+}
+
+.search:focus {
+    border-color: var(--gold);
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(260px, 1fr));
+
+    gap: 20px;
+}
+
+.card {
+    background: var(--bg-secondary);
+
+    border: 1px solid var(--border);
+
+    border-radius: 15px;
+
+    padding: 22px;
+
+    box-shadow: var(--shadow);
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-between;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: var(--gold);
+}
+
+.card-icon {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    font-size: 1.2rem;
+}
+
+.card p {
+    color: var(--muted);
+
+    font-size: .92rem;
+
+    margin: 10px 0 20px;
+}
+
+.card-bottom {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 10px;
+}
+
+.price {
+    color: var(--gold-light);
+
+    font-size: 1.25rem;
+
+    font-weight: bold;
+}
+
+.small-btn {
+    background: var(--gold);
+
+    color: #111;
+
+    padding: 9px 15px;
+
+    border-radius: 8px;
+
+    font-weight: bold;
+}
+
+.small-btn:hover {
+    background: var(--gold-light);
+}
+
+
+/* =========================
+   CALCULATOR
+========================= */
+
+.calculator {
+    background: var(--bg-secondary);
+
+    border: 1px solid var(--border);
+
+    border-radius: 15px;
+
+    padding: 25px;
+
+    box-shadow: var(--shadow);
+}
+
+.calc-item {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 15px 5px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.calc-item label {
+    cursor: pointer;
+}
+
+.calc-item input {
+    width: 18px;
+    height: 18px;
+
+    accent-color: var(--gold);
+}
+
+.total {
+    text-align: center;
+
+    font-size: 1.4rem;
+
+    margin: 25px 0;
+
+    font-weight: bold;
+}
+
+#totalAmount {
+    color: var(--gold-light);
+}
+
+
+/* =========================
+   FAQ
+========================= */
+
+.faq {
+    background: var(--bg-secondary);
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+    margin-bottom: 10px;
+
+    overflow: hidden;
+}
+
+.faq-question {
+    width: 100%;
+
+    border: none;
+
+    background: none;
+
+    color: var(--text);
+
+    padding: 18px;
+
+    text-align: left;
+
+    font-size: 1rem;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    display: flex;
+
+    justify-content: space-between;
+}
+
+.faq-answer {
+    display: none;
+
+    padding: 0 18px 18px;
+
+    color: var(--muted);
+}
+
+.faq.active .faq-answer {
+    display: block;
+}
+
+
+/* =========================
+   LOCATION
+========================= */
+
+.location {
+    text-align: center;
+
+    background: var(--bg-secondary);
+
+    padding: 30px;
+
+    margin-top: 45px;
+
+    border-radius: 15px;
+
+    border: 1px solid var(--border);
+
+    box-shadow: var(--shadow);
+}
+
+.location p {
+    color: var(--muted);
+    margin: 8px 0;
+}
+
+
+/* =========================
+   MUSIC PLAYER
+========================= */
+
+.music-player {
+    position: fixed;
+
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+
+    max-width: 500px;
+
+    margin: auto;
+
+    z-index: 9999;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 10px 14px;
+
+    background: rgba(20,20,20,.95);
+
+    border: 1px solid var(--gold);
+
+    border-radius: 40px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,.6);
+}
+
+.music-btn {
+    border: none;
+
+    background: var(--gold);
+
+    color: #111;
+
+    padding: 9px 16px;
+
+    border-radius: 25px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+}
+
+.music-file {
+    flex: 1;
+
+    min-width: 0;
+
+    font-size: .75rem;
+
+    color: #ccc;
+}
+
+.music-file input {
+    width: 100%;
+    font-size: .7rem;
+}
+
+
+/* =========================
+   WHATSAPP FLOAT
+========================= */
+
+.whatsapp-float {
+    position: fixed;
+
+    right: 18px;
+    bottom: 85px;
+
+    width: 58px;
+    height: 58px;
+
+    border-radius: 50%;
+
+    background: var(--whatsapp);
+
+    color: white;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 1.7rem;
+
+    box-shadow: 0 5px 20px rgba(37,211,102,.45);
+
+    z-index: 999;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    text-align: center;
+
+    padding: 35px 20px;
+
+    margin-top: 60px;
+
+    background: #080808;
+
+    color: #777;
+}
+
+footer strong {
+    color: var(--gold);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:600px) {
+
+    .hero {
+        min-height: 620px;
+        background-attachment: scroll;
+    }
+
+    .hero h1 {
+        letter-spacing: 5px;
+    }
+
+    .theme-button {
+        top: 12px;
+        right: 12px;
+    }
+
+    .quick-nav {
+        margin-top: 25px;
+    }
+
+    .promo-section,
+    .calculator {
+        padding: 20px;
+    }
+
+    .music-player {
+        bottom: 10px;
+        padding: 8px;
+    }
+
+    .music-file {
+        display: none;
+    }
+
+    .whatsapp-float {
+        bottom: 75px;
+    }
+}
+
+</style>
 </head>
+
+
 <body>
 
-    <div class="theme-toggle-container">
-        <button class="theme-btn" onclick="toggleTheme()">
-            <span id="themeIcon">☀️</span> <span id="themeText">Modo Claro</span>
-        </button>
+
+<!-- =========================
+     HERO
+========================= -->
+
+<header class="hero">
+
+<button class="theme-button" onclick="toggleTheme()">
+    <span id="themeIcon">☀️</span>
+    <span id="themeText">Modo claro</span>
+</button>
+
+<div class="hero-content">
+
+    <div class="logo-small">
+        Peluquería & Barbería
     </div>
 
-    <header class="hero-banner">
-        <h1 class="hero-title">STYLO TUPAY</h1>
-        <p class="hero-subtitle">Peluquería & Barbería Profesional</p>
-        <div id="statusBadge" class="status-badge">...</div>
-        <div>
-            <a href="https://wa.me/59172312883?text=Hola,%20quisiera%20consultar%20sobre%20los%20cortes" class="btn-whatsapp" target="_blank" rel="noopener noreferrer">💬 Escribir al WhatsApp</a>
-        </div>
-        
-        <nav class="quick-nav">
-            <a href="#promos" class="quick-nav-btn">🔥 Promos</a>
-            <a href="#servicios" class="quick-nav-btn">💈 Servicios</a>
-            <a href="#productos" class="quick-nav-btn">✂️ Tienda</a>
-            <a href="#cotizador" class="quick-nav-btn">🧮 Cotizar</a>
-            <a href="#faq" class="quick-nav-btn">❓ FAQ</a>
-        </nav>
-    </header>
+    <h1>STYLO TUPAY</h1>
 
-    <div class="container">
+    <h2>Profesional • Estilo • Imagen</h2>
 
-        <div class="verse-section">
-            <p style="font-style: italic;">"Todo lo que hagáis, hacedlo de corazón, como para el Señor y no para los hombres."</p>
-            <p style="color: var(--accent-gold); font-weight: bold; margin-top: 5px;">— Colosenses 3:23</p>
-        </div>
+    <p class="hero-description">
+        Dale a tu imagen el estilo que merece.
+        Cortes modernos, barbería y atención profesional.
+    </p>
 
-        <div class="promo-section" id="promos">
-            <h3 style="text-align: center; color: var(--accent-gold);">🔥 PROMOCIONES ESPECIALES</h3>
-            <div class="promo-grid">
-                <div class="promo-box">
-                    <div style="font-weight: bold; margin-bottom: 5px;">Combo Universitario</div>
-                    <p style="font-size:0.85rem; color:var(--text-muted);">Corte de cabello + Peinado con pomada.</p>
-                    <div style="color: var(--accent-gold); font-weight: bold; margin: 10px 0;">Bs 25</div>
-                    <a href="https://wa.me/59172312883?text=Hola,%20quiero%20aprovechar%20el%20Combo%20Universitario" class="btn-pedir" target="_blank">Pedir Promo</a>
-                </div>
-                <div class="promo-box">
-                    <div style="font-weight: bold; margin-bottom: 5px;">Padre e Hijo</div>
-                    <p style="font-size:0.85rem; color:var(--text-muted);">2 Cortes de cabello completos.</p>
-                    <div style="color: var(--accent-gold); font-weight: bold; margin: 10px 0;">Bs 55</div>
-                    <a href="https://wa.me/59172312883?text=Hola,%20quiero%20aprovechar%20la%20Promo%20Padre%20e%20Hijo" class="btn-pedir" target="_blank">Pedir Promo</a>
-                </div>
-            </div>
-        </div>
+    <div id="statusBadge" class="status">
+        ● Verificando horario...
+    </div>
 
-        <div class="booking-section">
-            <h2>📅 RESERVA TU CITA ONLINE</h2>
-            <p style="color: var(--text-muted);">Elige tu horario ideal en segundos y asegura tu atención sin filas:</p>
-            <a href="https://calendly.com/jhairtupa34/30min" class="btn-calendly" target="_blank" rel="noopener noreferrer">
-                🕒 AGENDAR CITA AQUÍ
-            </a>
-        </div>
+    <div class="hero-buttons">
 
-        <h2 class="section-title" id="servicios">NUESTROS SERVICIOS</h2>
-        <input type="text" id="searchInput" class="search-box" placeholder="🔍 Buscar servicio o producto..." onkeyup="filterServices()">
+        <a
+        class="btn btn-whatsapp"
+        href="https://wa.me/59172312883?text=Hola%20STYLO%20TUPAY,%20quiero%20consultar%20sobre%20un%20servicio"
+        target="_blank">
+        💬 WhatsApp
+        </a>
 
-        <div class="menu-grid" id="servicesGrid">
-            <div class="card" data-title="corte clasico moderno fade degrado">
-                <div>
-                    <div class="card-title">Corte Clásico / Moderno</div>
-                    <div class="card-desc">Incluye lavado, corte al estilo deseado, perfilado con navaja y peinado final.</div>
-                </div>
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px;">
-                    <span class="price">Bs 35</span>
-                    <a href="https://wa.me/59172312883?text=Hola,%20quiero%20reservar%20para%20un%20Corte" class="btn-pedir" target="_blank">Reservar</a>
-                </div>
-            </div>
-
-            <div class="card" data-title="perfilado de barba afeitado">
-                <div>
-                    <div class="card-title">Perfilado de Barba</div>
-                    <div class="card-desc">Arreglo de barba con toallas calientes, aceites hidratantes y acabado perfecto.</div>
-                </div>
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px;">
-                    <span class="price">Bs 25</span>
-                    <a href="https://wa.me/59172312883?text=Hola,%20quiero%20reservar%20para%20Perfilado%20de%20Barba" class="btn-pedir" target="_blank">Reservar</a>
-                </div>
-            </div>
-
-            <div class="card" data-title="combo vip corte barba completo">
-                <div>
-                    <div class="card-title">Combo VIP (Corte + Barba)</div>
-                    <div class="card-desc">La experiencia completa: corte de cabello profesional + arreglo completo de barba.</div>
-                </div>
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px;">
-                    <span class="price">Bs 55</span>
-                    <a href="https://wa.me/59172312883?text=Hola,%20quiero%20reservar%20el%20Combo%20VIP" class="btn-pedir" target="_blank">Reservar</a>
-                </div>
-            </div>
-        </div>
-
-        <h2 class="section-title" id="productos">💈 TIENDA DE PRODUCTOS</h2>
-        <div class="menu-grid">
-            <div class="card" data-title="maquina trimmer patillera">
-                <div>
-                    <div class="card-title">Trimmer Profesional</div>
-                    <div class="card-desc">Patillera de alta precisión para marcados y líneas.</div>
-                </div>
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px;">
-                    <span class="price">Bs 220</span>
-                    <a href="https://wa.me/59172312883?text=Hola,%20quiero%20comprar%20la%20Trimmer" class="btn-pedir" target="_blank">Comprar</a>
-                </div>
-            </div>
-
-            <div class="card" data-title="cera pomada moldeadora">
-                <div>
-                    <div class="card-title">Pomada Moldeadora</div>
-                    <div class="card-desc">Fijación fuerte y brillo natural a base de agua.</div>
-                </div>
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px;">
-                    <span class="price">Bs 60</span>
-                    <a href="https://wa.me/59172312883?text=Hola,%20quiero%20comprar%20la%20Pomada" class="btn-pedir" target="_blank">Comprar</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="calculator-section" id="cotizador">
-            <h3 style="color: var(--accent-gold); text-align: center; margin-bottom: 15px;">🧮 Armá tu Combo y Cotizá</h3>
-            <div class="calc-item">
-                <label><input type="checkbox" value="35" data-name="Corte Clásico" onchange="calculateTotal()"> Corte Clásico / Moderno</label>
-                <span style="color: var(--accent-gold); font-weight: bold;">Bs 35</span>
-            </div>
-            <div class="calc-item">
-                <label><input type="checkbox" value="25" data-name="Perfilado de Barba" onchange="calculateTotal()"> Perfilado de Barba</label>
-                <span style="color: var(--accent-gold); font-weight: bold;">Bs 25</span>
-            </div>
-            <div class="calc-item">
-                <label><input type="checkbox" value="20" data-name="Tratamiento Capilar" onchange="calculateTotal()"> Tratamiento Capilar</label>
-                <span style="color: var(--accent-gold); font-weight: bold;">Bs 20</span>
-            </div>
-
-            <div class="total-box">
-                Total Estimado: <span id="totalAmount" style="color: var(--accent-gold);">Bs 0</span>
-            </div>
-
-            <a id="waCalcBtn" href="#" class="btn-whatsapp" target="_blank" style="display: none; width: 100%; text-align: center; margin-top: 15px;">
-                💬 Pedir este Paquete por WhatsApp
-            </a>
-        </div>
-
-        <h2 class="section-title" id="faq">❓ PREGUNTAS FRECUENTES</h2>
-        <div class="faq-item">
-            <div class="faq-header" onclick="toggleFaq(this)">
-                <span>¿Es necesario reservar cita previa?</span>
-                <span>▼</span>
-            </div>
-            <div class="faq-content">
-                Atendemos por orden de llegada, pero recomendamos reservar vía Calendly o WhatsApp para evitar esperas.
-            </div>
-        </div>
-        <div class="faq-item">
-            <div class="faq-header" onclick="toggleFaq(this)">
-                <span>¿Qué medios de pago aceptan?</span>
-                <span>▼</span>
-            </div>
-            <div class="faq-content">
-                Aceptamos efectivo, transferencias por QR y tarjetas de débito/crédito.
-            </div>
-        </div>
-
-        <div style="background-color: var(--bg-secondary); padding: 25px; text-align: center; margin-top: 40px; border-radius: 12px; border: 1px solid var(--border-color);">
-            <h3>📍 Encuéntranos</h3>
-            <p style="color: var(--text-muted); margin: 10px 0;"><strong>Horarios:</strong> Lunes a Sábado de 09:00 a 20:00</p>
-            <p style="color: var(--text-muted); margin-bottom: 15px;"><strong>Dirección:</strong> Calle 24 de Septiembre #450 (Zona Central)</p>
-            <a href="https://www.google.com/maps/search/?api=1&query=Calle+24+de+Septiembre+450" class="btn-pedir" target="_blank">🗺️ Ver Ubicación en Google Maps</a>
-        </div>
+        <a
+        class="btn btn-gold"
+        href="https://calendly.com/jhairtupa34/30min"
+        target="_blank">
+        📅 Reservar cita
+        </a>
 
     </div>
 
-    <!-- REPRODUCTOR DE MÚSICA EMBEBIDO (Local/Seguro) -->
-    <div class="music-player-bar">
-        <button id="bgMusicToggle" class="music-btn" onclick="toggleMusic()">▶ Música</button>
-        <span style="font-size: 0.85rem;">🎵 Ambiente</span>
+    <nav class="quick-nav">
+
+        <a href="#promos">🔥 Promos</a>
+        <a href="#servicios">✂️ Servicios</a>
+        <a href="#productos">💈 Productos</a>
+        <a href="#cotizador">🧮 Cotizar</a>
+        <a href="#faq">❓ FAQ</a>
+
+    </nav>
+
+</div>
+
+</header>
+
+
+<main class="container">
+
+
+<!-- =========================
+     VERSÍCULO
+========================= -->
+
+<section class="verse">
+
+<p>
+"Todo lo que hagáis, hacedlo de corazón,
+como para el Señor y no para los hombres."
+</p>
+
+<strong>— Colosenses 3:23</strong>
+
+</section>
+
+
+<!-- =========================
+     PROMOCIONES
+========================= -->
+
+<section id="promos" class="promo-section">
+
+<h2 class="promo-title">
+🔥 PROMOCIONES ESPECIALES
+</h2>
+
+<div class="promo-grid">
+
+<div class="promo-box">
+
+<h3>🎓 Combo Universitario</h3>
+
+<p>
+Corte de cabello + peinado con pomada.
+</p>
+
+<div class="promo-price">
+Bs 25
+</div>
+
+<a
+class="btn btn-gold"
+href="https://wa.me/59172312883?text=Hola,%20quiero%20aprovechar%20el%20Combo%20Universitario"
+target="_blank">
+Pedir promo
+</a>
+
+</div>
+
+
+<div class="promo-box">
+
+<h3>👨‍👦 Padre e Hijo</h3>
+
+<p>
+2 cortes de cabello completos.
+</p>
+
+<div class="promo-price">
+Bs 55
+</div>
+
+<a
+class="btn btn-gold"
+href="https://wa.me/59172312883?text=Hola,%20quiero%20aprovechar%20la%20Promo%20Padre%20e%20Hijo"
+target="_blank">
+Pedir promo
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     RESERVA
+========================= -->
+
+<section class="booking">
+
+<h2>📅 RESERVA TU CITA</h2>
+
+<p>
+Elige tu horario y asegura tu atención sin esperar.
+</p>
+
+<a
+class="btn btn-gold"
+href="https://calendly.com/jhairtupa34/30min"
+target="_blank">
+
+🕒 AGENDAR CITA
+
+</a>
+
+</section>
+
+
+<!-- =========================
+     SERVICIOS
+========================= -->
+
+<h2 id="servicios" class="section-title">
+Nuestros Servicios
+</h2>
+
+<input
+type="text"
+id="searchInput"
+class="search"
+placeholder="🔍 Buscar un servicio..."
+onkeyup="filterServices()">
+
+
+<div class="grid" id="servicesGrid">
+
+
+<div class="card" data-title="corte clasico moderno fade degradado">
+
+<div>
+
+<div class="card-icon">✂️</div>
+
+<h3>
+Corte Clásico / Moderno
+</h3>
+
+<p>
+Lavado, corte al estilo deseado,
+perfilado con navaja y peinado final.
+</p>
+
+</div>
+
+<div class="card-bottom">
+
+<span class="price">
+Bs 35
+</span>
+
+<a
+class="small-btn"
+href="https://wa.me/59172312883?text=Hola,%20quiero%20reservar%20un%20Corte"
+target="_blank">
+Reservar
+</a>
+
+</div>
+
+</div>
+
+
+
+<div class="card" data-title="barba perfilado afeitado">
+
+<div>
+
+<div class="card-icon">🧔</div>
+
+<h3>
+Perfilado de Barba
+</h3>
+
+<p>
+Arreglo y perfilado de barba
+con acabado profesional.
+</p>
+
+</div>
+
+<div class="card-bottom">
+
+<span class="price">
+Bs 25
+</span>
+
+<a
+class="small-btn"
+href="https://wa.me/59172312883?text=Hola,%20quiero%20reservar%20un%20Perfilado%20de%20Barba"
+target="_blank">
+Reservar
+</a>
+
+</div>
+
+</div>
+
+
+
+<div class="card" data-title="combo vip corte barba">
+
+<div>
+
+<div class="card-icon">🔥</div>
+
+<h3>
+Combo VIP
+</h3>
+
+<p>
+Corte de cabello profesional
++ arreglo completo de barba.
+</p>
+
+</div>
+
+<div class="card-bottom">
+
+<span class="price">
+Bs 55
+</span>
+
+<a
+class="small-btn"
+href="https://wa.me/59172312883?text=Hola,%20quiero%20reservar%20el%20Combo%20VIP"
+target="_blank">
+Reservar
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- =========================
+     PRODUCTOS
+========================= -->
+
+<h2 id="productos" class="section-title">
+💈 Tienda de Productos
+</h2>
+
+<div class="grid">
+
+
+<div class="card">
+
+<div>
+
+<div class="card-icon">⚡</div>
+
+<h3>
+Trimmer Profesional
+</h3>
+
+<p>
+Patillera de alta precisión
+para marcados y líneas.
+</p>
+
+</div>
+
+<div class="card-bottom">
+
+<span class="price">
+Bs 220
+</span>
+
+<a
+class="small-btn"
+href="https://wa.me/59172312883?text=Hola,%20quiero%20comprar%20la%20Trimmer"
+target="_blank">
+Comprar
+</a>
+
+</div>
+
+</div>
+
+
+
+<div class="card">
+
+<div>
+
+<div class="card-icon">✨</div>
+
+<h3>
+Pomada Moldeadora
+</h3>
+
+<p>
+Fijación fuerte y brillo natural
+a base de agua.
+</p>
+
+</div>
+
+<div class="card-bottom">
+
+<span class="price">
+Bs 60
+</span>
+
+<a
+class="small-btn"
+href="https://wa.me/59172312883?text=Hola,%20quiero%20comprar%20la%20Pomada"
+target="_blank">
+Comprar
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- =========================
+     COTIZADOR
+========================= -->
+
+<h2 id="cotizador" class="section-title">
+🧮 Cotiza tu Combo
+</h2>
+
+<section class="calculator">
+
+<div class="calc-item">
+
+<label>
+<input
+type="checkbox"
+value="35"
+data-name="Corte Clásico / Moderno"
+onchange="calculateTotal()">
+
+Corte Clásico / Moderno
+</label>
+
+<strong>Bs 35</strong>
+
+</div>
+
+
+<div class="calc-item">
+
+<label>
+<input
+type="checkbox"
+value="25"
+data-name="Perfilado de Barba"
+onchange="calculateTotal()">
+
+Perfilado de Barba
+</label>
+
+<strong>Bs 25</strong>
+
+</div>
+
+
+<div class="calc-item">
+
+<label>
+<input
+type="checkbox"
+value="20"
+data-name="Peinado"
+onchange="calculateTotal()">
+
+Peinado
+</label>
+
+<strong>Bs 20</strong>
+
+</div>
+
+
+<div class="total">
+
+Total estimado:
+
+<span id="totalAmount">
+Bs 0
+</span>
+
+</div>
+
+
+<a
+id="waCalcBtn"
+class="btn btn-whatsapp"
+href="#"
+target="_blank"
+style="display:none;width:100%;">
+
+💬 Pedir este paquete por WhatsApp
+
+</a>
+
+</section>
+
+
+<!-- =========================
+     FAQ
+========================= -->
+
+<h2 id="faq" class="section-title">
+❓ Preguntas Frecuentes
+</h2>
+
+
+<div class="faq">
+
+<button class="faq-question" onclick="toggleFaq(this)">
+¿Es necesario reservar cita?
+<span>▼</span>
+</button>
+
+<div class="faq-answer">
+
+Atendemos por orden de llegada,
+pero recomendamos reservar por
+Calendly o WhatsApp para evitar esperas.
+
+</div>
+
+</div>
+
+
+
+<div class="faq">
+
+<button class="faq-question" onclick="toggleFaq(this)">
+¿Qué medios de pago aceptan?
+<span>▼</span>
+</button>
+
+<div class="faq-answer">
+
+Puedes consultar los medios de pago
+disponibles directamente por WhatsApp.
+
+</div>
+
+</div>
+
+
+
+<div class="faq">
+
+<button class="faq-question" onclick="toggleFaq(this)">
+¿Dónde se encuentra STYLO TUPAY?
+<span>▼</span>
+</button>
+
+<div class="faq-answer">
+
+Estamos en la ciudad de Oruro,
+zona norte, avenida Tomás Barrón
+entre la calle 11.
+
+</div>
+
+</div>
+
+
+<!-- =========================
+     UBICACIÓN
+========================= -->
+
+<section class="location">
+
+<h2>
+📍 Encuéntranos
+</h2>
+
+<p>
+<strong>Ciudad:</strong> Oruro
+</p>
+
+<p>
+<strong>Zona:</strong> Norte
+</p>
+
+<p>
+<strong>Dirección:</strong>
+Avenida Tomás Barrón entre la calle 11
+</p>
+
+<p>
+<strong>Horario:</strong>
+08:30 a 22:30
+</p>
+
+<br>
+
+<a
+class="btn btn-gold"
+href="https://www.google.com/maps/search/?api=1&query=Avenida+Tomas+Barron+Calle+11+Oruro+Bolivia"
+target="_blank">
+
+🗺️ Ver ubicación
+
+</a>
+
+</section>
+
+
+</main>
+
+
+<!-- =========================
+     WHATSAPP FLOTANTE
+========================= -->
+
+<a
+class="whatsapp-float"
+href="https://wa.me/59172312883?te
