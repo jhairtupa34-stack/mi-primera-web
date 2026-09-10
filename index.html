@@ -5,9 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stylo Tupay | Peluquería & Barbería Profesional</title>
     <style>
-        /* ==========================================
-           1. VARIABLES CSS (SISTEMA DE TEMAS)
-           ========================================== */
         :root {
             --bg-primary: #121212;
             --bg-secondary: #1e1e1e;
@@ -21,7 +18,6 @@
             --whatsapp-color: #25d366;
             --whatsapp-hover: #20ba5a;
             --card-shadow: rgba(0, 0, 0, 0.5);
-            --banner-overlay: rgba(0, 0, 0, 0.8);
         }
 
         [data-theme="light"] {
@@ -35,12 +31,8 @@
             --text-dark: #ffffff;
             --border-color: #d4d4d8;
             --card-shadow: rgba(0, 0, 0, 0.1);
-            --banner-overlay: rgba(0, 0, 0, 0.65);
         }
 
-        /* ==========================================
-           2. ESTILOS GENERALES Y RESET
-           ========================================== */
         * {
             margin: 0;
             padding: 0;
@@ -80,56 +72,27 @@
             letter-spacing: 1px;
         }
 
-        /* ==========================================
-           3. BOTÓN DE CAMBIO DE TEMA (CLARO/OSCURO)
-           ========================================== */
-        .theme-toggle-container {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            z-index: 100;
-        }
-
-        .theme-btn {
-            background-color: var(--bg-secondary);
-            color: var(--text-main);
-            border: 1px solid var(--accent-gold);
-            padding: 8px 14px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-size: 0.85rem;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            box-shadow: 0 4px 10px var(--card-shadow);
-        }
-
-        /* ==========================================
-           4. BANNER DE PORTADA PRINCIPAL (HERO)
-           ========================================== */
+        /* BANNER Y ENCABEZADO */
         .hero-banner {
             position: relative;
             width: 100%;
-            background: linear-gradient(var(--banner-overlay), var(--banner-overlay)), 
-                        url('https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=1200&auto=format&fit=crop') center/cover no-repeat;
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.85)), #1a1a1a;
             text-align: center;
-            padding: 70px 20px 50px;
+            padding: 60px 20px 40px;
             border-bottom: 3px solid var(--accent-gold);
             box-shadow: 0 4px 20px var(--card-shadow);
         }
 
         .hero-title {
-            font-size: 3.2rem;
+            font-size: 3rem;
             color: var(--accent-gold);
             letter-spacing: 4px;
             text-transform: uppercase;
             margin-bottom: 5px;
-            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.9);
         }
 
         .hero-subtitle {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: var(--text-main);
             letter-spacing: 2px;
             margin-bottom: 20px;
@@ -144,7 +107,6 @@
             font-weight: bold;
             margin-bottom: 20px;
             text-transform: uppercase;
-            letter-spacing: 1px;
         }
 
         .status-open {
@@ -159,10 +121,8 @@
             border: 1px solid #ff4d4d;
         }
 
-        .hero-banner .btn-whatsapp {
-            display: block;
-            width: fit-content;
-            margin: 0 auto;
+        .btn-whatsapp {
+            display: inline-block;
             background-color: var(--whatsapp-color);
             color: #ffffff;
             padding: 14px 28px;
@@ -170,17 +130,26 @@
             font-weight: bold;
             border-radius: 30px;
             box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
-            transition: transform 0.2s ease, background-color 0.2s ease;
         }
 
-        .hero-banner .btn-whatsapp:hover {
-            background-color: var(--whatsapp-hover);
-            transform: translateY(-3px);
+        .theme-toggle-container {
+            position: absolute;
+            top: 15px;
+            right: 15px;
         }
 
-        /* ==========================================
-           5. NAVEGACIÓN RÁPIDA (ANCHOR LINKS)
-           ========================================== */
+        .theme-btn {
+            background-color: var(--bg-secondary);
+            color: var(--text-main);
+            border: 1px solid var(--accent-gold);
+            padding: 8px 14px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+
+        /* NAVEGACIÓN RÁPIDA */
         .quick-nav {
             display: flex;
             justify-content: center;
@@ -197,211 +166,85 @@
             border-radius: 15px;
             text-decoration: none;
             font-size: 0.85rem;
-            font-weight: 600;
         }
 
-        .quick-nav-btn:hover {
-            border-color: var(--accent-gold);
-            color: var(--accent-gold);
-        }
-
-        /* ==========================================
-           6. SECCIÓN VERSÍCULO BÍBLICO
-           ========================================== */
+        /* VERSÍCULO Y PROMOS */
         .verse-section {
             background: var(--bg-secondary);
             border-left: 4px solid var(--accent-gold);
-            border-right: 1px solid var(--border-color);
-            border-top: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
-            padding: 20px 25px;
-            margin-bottom: 35px;
+            padding: 20px;
+            margin-bottom: 30px;
             border-radius: 8px;
             text-align: center;
-            box-shadow: 0 4px 15px var(--card-shadow);
         }
 
-        .verse-text {
-            font-style: italic;
-            font-size: 1.05rem;
-            color: var(--text-main);
-            line-height: 1.6;
-            margin-bottom: 8px;
-        }
-
-        .verse-ref {
-            font-weight: bold;
-            color: var(--accent-gold);
-            font-size: 0.95rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* ==========================================
-           7. SECCIÓN DE PROMOCIONES ESPECIALES
-           ========================================== */
         .promo-section {
             background: var(--bg-secondary);
             border: 2px solid var(--accent-gold);
             border-radius: 12px;
-            padding: 25px 20px;
-            margin-bottom: 35px;
-            box-shadow: 0 4px 15px var(--card-shadow);
-        }
-
-        .promo-header {
-            text-align: center;
-            color: var(--accent-gold);
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            font-weight: bold;
-            text-transform: uppercase;
+            padding: 20px;
+            margin-bottom: 30px;
         }
 
         .promo-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 15px;
+            margin-top: 15px;
         }
 
         .promo-box {
             background: var(--bg-tertiary);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
             padding: 15px;
+            border-radius: 8px;
             text-align: center;
         }
 
-        .promo-tag {
-            background-color: #e63946;
-            color: white;
-            font-size: 0.75rem;
-            font-weight: bold;
-            padding: 4px 8px;
-            border-radius: 4px;
-            display: inline-block;
-            margin-bottom: 8px;
-            text-transform: uppercase;
-        }
-
-        .promo-title {
-            font-size: 1.1rem;
-            font-weight: bold;
-            color: var(--text-main);
-            margin-bottom: 5px;
-        }
-
-        .promo-price {
-            color: var(--accent-gold);
-            font-size: 1.2rem;
-            font-weight: bold;
-            margin: 5px 0;
-        }
-
-        .old-price {
-            text-decoration: line-through;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-right: 5px;
-        }
-
-        /* ==========================================
-           8. SECCIÓN DE RESERVAS (CALENDLY)
-           ========================================== */
+        /* RESERVAS Y TARJETAS */
         .booking-section {
             background: var(--bg-secondary);
-            padding: 35px 25px;
+            padding: 30px;
             text-align: center;
             border-radius: 16px;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             border: 2px solid var(--accent-gold);
-            box-shadow: 0 0 20px var(--card-shadow);
-        }
-
-        .booking-section h2 {
-            color: var(--text-main);
-            font-size: 2rem;
-            margin-bottom: 12px;
-        }
-
-        .booking-section p {
-            color: var(--text-muted);
-            font-size: 1.05rem;
-            margin-bottom: 25px;
         }
 
         .btn-calendly {
             display: inline-block;
-            background: linear-gradient(135deg, var(--accent-gold-hover) 0%, var(--accent-gold) 100%);
+            background: var(--accent-gold);
             color: var(--text-dark);
-            padding: 16px 36px;
+            padding: 14px 28px;
             text-decoration: none;
-            font-weight: 800;
-            border-radius: 50px;
-            font-size: 1.15rem;
-            text-transform: uppercase;
-            box-shadow: 0 6px 20px rgba(196, 164, 104, 0.4);
-            transition: all 0.3s ease;
+            font-weight: bold;
+            border-radius: 30px;
+            margin-top: 15px;
         }
 
-        .btn-calendly:hover {
-            transform: translateY(-3px) scale(1.03);
-            box-shadow: 0 10px 25px rgba(196, 164, 104, 0.6);
-        }
-
-        /* ==========================================
-           9. BUSCADOR INTERACTIVO Y GRID DE SERVICIOS/PRODUCTOS
-           ========================================== */
         .search-box {
             width: 100%;
-            padding: 14px 20px;
+            padding: 14px;
             background-color: var(--bg-secondary);
             border: 1px solid var(--border-color);
             border-radius: 10px;
             color: var(--text-main);
-            font-size: 1rem;
             margin-bottom: 25px;
-            outline: none;
-        }
-
-        .search-box:focus {
-            border-color: var(--accent-gold);
         }
 
         .menu-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
         }
 
         .card {
             background: var(--bg-secondary);
             border-radius: 12px;
-            overflow: hidden;
+            padding: 20px;
             border: 1px solid var(--border-color);
-            box-shadow: 0 4px 10px var(--card-shadow);
-            display: flex;
-            flex-direction: column;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px var(--card-shadow);
-        }
-
-        .card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .card-body {
-            padding: 15px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            flex-grow: 1;
         }
 
         .card-title {
@@ -413,14 +256,7 @@
         .card-desc {
             font-size: 0.9rem;
             color: var(--text-muted);
-            margin: 8px 0;
-        }
-
-        .card-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 10px;
+            margin: 10px 0;
         }
 
         .price {
@@ -435,249 +271,267 @@
             text-decoration: none;
             padding: 8px 15px;
             border-radius: 6px;
-            font-size: 0.85rem;
             font-weight: bold;
-            transition: background 0.3s, transform 0.2s;
+            display: inline-block;
         }
 
-        .btn-pedir:hover {
-            background-color: var(--accent-gold-hover);
-            transform: scale(1.05);
-        }
-
-        /* ==========================================
-           10. GALERÍA DE ESTILOS (PORTFOLIO CON FILTROS)
-           ========================================== */
-        .portfolio-filters {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
-        }
-
-        .filter-btn {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            color: var(--text-main);
-            padding: 6px 14px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-size: 0.85rem;
-            font-weight: bold;
-        }
-
-        .filter-btn.active, .filter-btn:hover {
-            background: var(--accent-gold);
-            color: var(--text-dark);
-            border-color: var(--accent-gold);
-        }
-
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-        }
-
-        .portfolio-item {
-            position: relative;
-            border-radius: 10px;
-            overflow: hidden;
-            height: 220px;
-            border: 1px solid var(--border-color);
-        }
-
-        .portfolio-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.4s ease;
-        }
-
-        .portfolio-item:hover img {
-            transform: scale(1.1);
-        }
-
-        .portfolio-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(transparent, rgba(0,0,0,0.9));
-            padding: 15px 10px 10px;
-            color: #ffffff;
-            font-size: 0.85rem;
-            text-align: center;
-        }
-
-        /* ==========================================
-           11. NUEVA SECCIÓN: EQUIPO DE BARBEROS
-           ========================================== */
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-        }
-
-        .team-card {
-            background: var(--bg-secondary);
-            border-radius: 12px;
-            border: 1px solid var(--border-color);
-            padding: 20px;
-            text-align: center;
-            box-shadow: 0 4px 10px var(--card-shadow);
-        }
-
-        .team-avatar {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin: 0 auto 15px;
-            border: 3px solid var(--accent-gold);
-        }
-
-        .team-name {
-            font-size: 1.15rem;
-            font-weight: bold;
-            color: var(--text-main);
-        }
-
-        .team-role {
-            font-size: 0.85rem;
-            color: var(--accent-gold);
-            margin-bottom: 10px;
-            font-weight: 600;
-        }
-
-        .team-desc {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-bottom: 15px;
-        }
-
-        /* ==========================================
-           12. PLANES DE MEMBRESÍA MENSUAL
-           ========================================== */
-        .membership-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 20px;
-        }
-
-        .membership-card {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 25px 20px;
-            text-align: center;
-            position: relative;
-        }
-
-        .membership-card.featured {
-            border: 2px solid var(--accent-gold);
-        }
-
-        .membership-badge {
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--accent-gold);
-            color: var(--text-dark);
-            padding: 3px 12px;
-            border-radius: 12px;
-            font-size: 0.75rem;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
-
-        .membership-price {
-            font-size: 2rem;
-            font-weight: bold;
-            color: var(--accent-gold);
-            margin: 15px 0;
-        }
-
-        .membership-features {
-            list-style: none;
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            margin-bottom: 20px;
-        }
-
-        .membership-features li {
-            padding: 6px 0;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        /* ==========================================
-           13. COTIZADOR INTERACTIVO
-           ========================================== */
+        /* COTIZADOR */
         .calculator-section {
             background-color: var(--bg-secondary);
-            padding: 30px 20px;
+            padding: 25px;
             border-radius: 12px;
             margin-top: 40px;
             border: 1px solid var(--border-color);
         }
 
-        .calculator-section h3 {
-            color: var(--accent-gold);
-            margin-bottom: 15px;
-            text-align: center;
-        }
-
         .calc-item {
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            padding: 12px 0;
+            padding: 10px 0;
             border-bottom: 1px solid var(--border-color);
-        }
-
-        .calc-item label {
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .calc-item input[type="checkbox"] {
-            width: 18px;
-            height: 18px;
-            accent-color: var(--accent-gold);
-            cursor: pointer;
         }
 
         .total-box {
             margin-top: 20px;
             text-align: center;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             font-weight: bold;
-            color: var(--text-main);
         }
 
-        .total-box span {
-            color: var(--accent-gold);
-        }
-
-        .btn-calc-wa {
-            display: block;
-            width: 100%;
-            text-align: center;
-            margin-top: 15px;
-            background-color: var(--whatsapp-color);
-            color: white;
-            padding: 12px;
-            text-decoration: none;
-            font-weight: bold;
+        /* PREGUNTAS FRECUENTES */
+        .faq-item {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
             border-radius: 8px;
-            transition: background 0.3s;
+            margin-bottom: 10px;
         }
 
-        .btn-calc-wa:hover {
-            background-color: var(--whatsapp-hover);
+        .faq-header {
+            padding: 15px;
+            cursor: pointer;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
         }
 
-        /* ===================
+        .faq-content {
+            padding: 15px;
+            display: none;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* REPRODUCTOR FLOTANTE */
+        .music-player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: var(--bg-secondary);
+            border: 2px solid var(--accent-gold);
+            border-radius: 30px;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 6px 20px var(--card-shadow);
+            z-index: 9999;
+        }
+
+        .music-btn {
+            background: var(--accent-gold);
+            border: none;
+            color: var(--text-dark);
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #0a0a0a;
+            color: #666;
+            font-size: 0.8rem;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="theme-toggle-container">
+        <button class="theme-btn" onclick="toggleTheme()">
+            <span id="themeIcon">☀️</span> <span id="themeText">Modo Claro</span>
+        </button>
+    </div>
+
+    <header class="hero-banner">
+        <h1 class="hero-title">STYLO TUPAY</h1>
+        <p class="hero-subtitle">Peluquería & Barbería Profesional</p>
+        <div id="statusBadge" class="status-badge">...</div>
+        <div>
+            <a href="https://wa.me/59172312883?text=Hola,%20quisiera%20consultar%20sobre%20los%20cortes" class="btn-whatsapp" target="_blank" rel="noopener noreferrer">💬 Escribir al WhatsApp</a>
+        </div>
+        
+        <nav class="quick-nav">
+            <a href="#promos" class="quick-nav-btn">🔥 Promos</a>
+            <a href="#servicios" class="quick-nav-btn">💈 Servicios</a>
+            <a href="#productos" class="quick-nav-btn">✂️ Tienda</a>
+            <a href="#cotizador" class="quick-nav-btn">🧮 Cotizar</a>
+            <a href="#faq" class="quick-nav-btn">❓ FAQ</a>
+        </nav>
+    </header>
+
+    <div class="container">
+
+        <div class="verse-section">
+            <p style="font-style: italic;">"Todo lo que hagáis, hacedlo de corazón, como para el Señor y no para los hombres."</p>
+            <p style="color: var(--accent-gold); font-weight: bold; margin-top: 5px;">— Colosenses 3:23</p>
+        </div>
+
+        <div class="promo-section" id="promos">
+            <h3 style="text-align: center; color: var(--accent-gold);">🔥 PROMOCIONES ESPECIALES</h3>
+            <div class="promo-grid">
+                <div class="promo-box">
+                    <div style="font-weight: bold; margin-bottom: 5px;">Combo Universitario</div>
+                    <p style="font-size:0.85rem; color:var(--text-muted);">Corte de cabello + Peinado con pomada.</p>
+                    <div style="color: var(--accent-gold); font-weight: bold; margin: 10px 0;">Bs 25</div>
+                    <a href="https://wa.me/59172312883?text=Hola,%20quiero%20aprovechar%20el%20Combo%20Universitario" class="btn-pedir" target="_blank">Pedir Promo</a>
+                </div>
+                <div class="promo-box">
+                    <div style="font-weight: bold; margin-bottom: 5px;">Padre e Hijo</div>
+                    <p style="font-size:0.85rem; color:var(--text-muted);">2 Cortes de cabello completos.</p>
+                    <div style="color: var(--accent-gold); font-weight: bold; margin: 10px 0;">Bs 55</div>
+                    <a href="https://wa.me/59172312883?text=Hola,%20quiero%20aprovechar%20la%20Promo%20Padre%20e%20Hijo" class="btn-pedir" target="_blank">Pedir Promo</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="booking-section">
+            <h2>📅 RESERVA TU CITA ONLINE</h2>
+            <p style="color: var(--text-muted);">Elige tu horario ideal en segundos y asegura tu atención sin filas:</p>
+            <a href="https://calendly.com/jhairtupa34/30min" class="btn-calendly" target="_blank" rel="noopener noreferrer">
+                🕒 AGENDAR CITA AQUÍ
+            </a>
+        </div>
+
+        <h2 class="section-title" id="servicios">NUESTROS SERVICIOS</h2>
+        <input type="text" id="searchInput" class="search-box" placeholder="🔍 Buscar servicio o producto..." onkeyup="filterServices()">
+
+        <div class="menu-grid" id="servicesGrid">
+            <div class="card" data-title="corte clasico moderno fade degrado">
+                <div>
+                    <div class="card-title">Corte Clásico / Moderno</div>
+                    <div class="card-desc">Incluye lavado, corte al estilo deseado, perfilado con navaja y peinado final.</div>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px;">
+                    <span class="price">Bs 35</span>
+                    <a href="https://wa.me/59172312883?text=Hola,%20quiero%20reservar%20para%20un%20Corte" class="btn-pedir" target="_blank">Reservar</a>
+                </div>
+            </div>
+
+            <div class="card" data-title="perfilado de barba afeitado">
+                <div>
+                    <div class="card-title">Perfilado de Barba</div>
+                    <div class="card-desc">Arreglo de barba con toallas calientes, aceites hidratantes y acabado perfecto.</div>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px;">
+                    <span class="price">Bs 25</span>
+                    <a href="https://wa.me/59172312883?text=Hola,%20quiero%20reservar%20para%20Perfilado%20de%20Barba" class="btn-pedir" target="_blank">Reservar</a>
+                </div>
+            </div>
+
+            <div class="card" data-title="combo vip corte barba completo">
+                <div>
+                    <div class="card-title">Combo VIP (Corte + Barba)</div>
+                    <div class="card-desc">La experiencia completa: corte de cabello profesional + arreglo completo de barba.</div>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px;">
+                    <span class="price">Bs 55</span>
+                    <a href="https://wa.me/59172312883?text=Hola,%20quiero%20reservar%20el%20Combo%20VIP" class="btn-pedir" target="_blank">Reservar</a>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title" id="productos">💈 TIENDA DE PRODUCTOS</h2>
+        <div class="menu-grid">
+            <div class="card" data-title="maquina trimmer patillera">
+                <div>
+                    <div class="card-title">Trimmer Profesional</div>
+                    <div class="card-desc">Patillera de alta precisión para marcados y líneas.</div>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px;">
+                    <span class="price">Bs 220</span>
+                    <a href="https://wa.me/59172312883?text=Hola,%20quiero%20comprar%20la%20Trimmer" class="btn-pedir" target="_blank">Comprar</a>
+                </div>
+            </div>
+
+            <div class="card" data-title="cera pomada moldeadora">
+                <div>
+                    <div class="card-title">Pomada Moldeadora</div>
+                    <div class="card-desc">Fijación fuerte y brillo natural a base de agua.</div>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px;">
+                    <span class="price">Bs 60</span>
+                    <a href="https://wa.me/59172312883?text=Hola,%20quiero%20comprar%20la%20Pomada" class="btn-pedir" target="_blank">Comprar</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="calculator-section" id="cotizador">
+            <h3 style="color: var(--accent-gold); text-align: center; margin-bottom: 15px;">🧮 Armá tu Combo y Cotizá</h3>
+            <div class="calc-item">
+                <label><input type="checkbox" value="35" data-name="Corte Clásico" onchange="calculateTotal()"> Corte Clásico / Moderno</label>
+                <span style="color: var(--accent-gold); font-weight: bold;">Bs 35</span>
+            </div>
+            <div class="calc-item">
+                <label><input type="checkbox" value="25" data-name="Perfilado de Barba" onchange="calculateTotal()"> Perfilado de Barba</label>
+                <span style="color: var(--accent-gold); font-weight: bold;">Bs 25</span>
+            </div>
+            <div class="calc-item">
+                <label><input type="checkbox" value="20" data-name="Tratamiento Capilar" onchange="calculateTotal()"> Tratamiento Capilar</label>
+                <span style="color: var(--accent-gold); font-weight: bold;">Bs 20</span>
+            </div>
+
+            <div class="total-box">
+                Total Estimado: <span id="totalAmount" style="color: var(--accent-gold);">Bs 0</span>
+            </div>
+
+            <a id="waCalcBtn" href="#" class="btn-whatsapp" target="_blank" style="display: none; width: 100%; text-align: center; margin-top: 15px;">
+                💬 Pedir este Paquete por WhatsApp
+            </a>
+        </div>
+
+        <h2 class="section-title" id="faq">❓ PREGUNTAS FRECUENTES</h2>
+        <div class="faq-item">
+            <div class="faq-header" onclick="toggleFaq(this)">
+                <span>¿Es necesario reservar cita previa?</span>
+                <span>▼</span>
+            </div>
+            <div class="faq-content">
+                Atendemos por orden de llegada, pero recomendamos reservar vía Calendly o WhatsApp para evitar esperas.
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-header" onclick="toggleFaq(this)">
+                <span>¿Qué medios de pago aceptan?</span>
+                <span>▼</span>
+            </div>
+            <div class="faq-content">
+                Aceptamos efectivo, transferencias por QR y tarjetas de débito/crédito.
+            </div>
+        </div>
+
+        <div style="background-color: var(--bg-secondary); padding: 25px; text-align: center; margin-top: 40px; border-radius: 12px; border: 1px solid var(--border-color);">
+            <h3>📍 Encuéntranos</h3>
+            <p style="color: var(--text-muted); margin: 10px 0;"><strong>Horarios:</strong> Lunes a Sábado de 09:00 a 20:00</p>
+            <p style="color: var(--text-muted); margin-bottom: 15px;"><strong>Dirección:</strong> Calle 24 de Septiembre #450 (Zona Central)</p>
+            <a href="https://www.google.com/maps/search/?api=1&query=Calle+24+de+Septiembre+450" class="btn-pedir" target="_blank">🗺️ Ver Ubicación en Google Maps</a>
+        </div>
+
+    </div>
+
+    <!-- REPRODUCTOR DE MÚSICA EMBEBIDO (Local/Seguro) -->
+    <div class="music-player-bar">
+        <button id="bgMusicToggle" class="music-btn" onclick="toggleMusic()">▶ Música</button>
+        <span style="font-size: 0.85rem;">🎵 Ambiente</span>
