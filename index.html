@@ -15,7 +15,7 @@
         body {
             background-color: #121212;
             color: #f1f1f1;
-            padding-bottom: 70px; /* Espacio para el reproductor fijo */
+            padding-bottom: 90px;
         }
 
         /* Banner de Portada Principal */
@@ -443,41 +443,42 @@
             background-color: #0369a1;
         }
 
-        /* Control de Música Flotante */
+        /* Botón de Música Flotante Fijo */
         .music-player-bar {
             position: fixed;
-            bottom: 15px;
-            left: 15px;
-            background: rgba(20, 20, 20, 0.95);
-            border: 1px solid #c4a468;
+            bottom: 20px;
+            left: 20px;
+            background: #1e1e1e;
+            border: 2px solid #c4a468;
             border-radius: 30px;
-            padding: 8px 18px;
+            padding: 10px 20px;
             display: flex;
             align-items: center;
             gap: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
-            z-index: 1000;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.8);
+            z-index: 9999;
         }
 
         .music-btn {
-            background: #c4a468;
+            background: linear-gradient(135deg, #d8b87a 0%, #c4a468 100%);
             border: none;
             color: #121212;
-            padding: 6px 12px;
+            padding: 8px 16px;
             border-radius: 20px;
             font-weight: bold;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             cursor: pointer;
-            transition: background 0.2s;
+            transition: transform 0.2s ease, background 0.2s ease;
         }
 
         .music-btn:hover {
-            background: #d8b87a;
+            transform: scale(1.05);
         }
 
         .music-info {
-            font-size: 0.8rem;
-            color: #ddd;
+            font-size: 0.85rem;
+            color: #ffffff;
+            font-weight: 600;
         }
 
         footer {
@@ -604,4 +605,4 @@
                 <img src="https://images.unsplash.com/photo-1597354984706-fac992d9306f?q=80&w=600&auto=format&fit=crop" alt="Cera Pomada">
                 <div class="card-body">
                     <div class="card-title">Pomada Moldeadora Premium</div>
-                    <div class="card-desc">Fijación fuerte y brillo natural a base de agua. Fácil 
+                    <div class="card-desc">F
